@@ -13,9 +13,9 @@ Authors: Zhiyi Jin and Akhila Sulgante
 - Unzip this project on your local machine and cd to this folder location
 
 ```
-npm install
+yarn install
 npm run initdb
-npm start
+yarn start
 cd frontend => yarn install => yarn start
 ```
 
