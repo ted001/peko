@@ -1,0 +1,18 @@
+/*footer*/
+.order-footer {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 6px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.order-footer .checkedInfo {
+  float: right;
+}
+
+.order-footer .orderNow {
+  float: right;
+  margin-top: 5px;
+  margin-left: 100px;
+}
