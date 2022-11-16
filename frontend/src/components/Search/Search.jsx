@@ -1,9 +1,25 @@
+// Zhiyi Jin
+
 import React, { useState, useRef } from "react";
 import "./Search.css";
 
 export default function Search(props) {
   let [Food_Type, SetFood_Type] = useState("Select Food Type");
-  const foodTypes = ["Vegetarian", "Pizza", "Burgers", "Steak", "Asian", "Korean", "Japanese", "Indian", "Mexican", "American", "Sandwiches", "Italian", "Chinese"];
+  const foodTypes = [
+    "Vegetarian",
+    "Pizza",
+    "Burgers",
+    "Steak",
+    "Asian",
+    "Korean",
+    "Japanese",
+    "Indian",
+    "Mexican",
+    "American",
+    "Sandwiches",
+    "Italian",
+    "Chinese",
+  ];
 
   let [Food_Taste, SetFood_Taste] = useState("Select Food Taste");
   const foodTastes = ["sweet", "sour", "spicy"];
@@ -91,7 +107,11 @@ export default function Search(props) {
         <label className="form-label" htmlFor="">
           Budget
         </label>
-        <input type="text" ref={budgetInput} className="form-control" placeholder="Eg: 10"></input>
+        <input
+          type="text"
+          ref={budgetInput}
+          className="form-control"
+          placeholder="Eg: 10"></input>
         {/* <div className="d-flex ajustify-content-center ">
           <input style={{ width: "60px" }} type="text" className="form-control" placeholder="min"></input>
           <input type="range" id="budgetRange"></input>
@@ -100,7 +120,10 @@ export default function Search(props) {
       </div>
       <div className="col-lg-2 col-md-1 ">
         <div className="d-flex justify-content-center ">
-          <button onClick={onSearchHandler} type="button" className="btn btn-primary">
+          <button
+            onClick={onSearchHandler}
+            type="button"
+            className="btn btn-primary">
             Search
           </button>
         </div>
