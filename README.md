@@ -26,3 +26,6 @@ Then go to http://localhost:3000
 
 Zhiyi Jin 60% released branch:
 https://github.com/Akhilasulgante/peko/releases/tag/60%25_release_tag_Nov15
+
+Akhila Sulgante 60% release tag: Includes registration and login(frontend and backend) without passport authethication
+[release tag](https://github.com/Akhilasulgante/peko/releases/tag/60%25_Akhila_Nov15)
