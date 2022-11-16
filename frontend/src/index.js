@@ -1,14 +1,34 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 
+import Meals from "./pages/Meals";
+import OrderNow from "./pages/OrderNow";
+import Home from "./pages/Home";
+
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
-  document.getElementById("root")
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/meals",
+    element: <Meals />,
+  },
+  {
+    path: "/orderNow",
+    element: <OrderNow />,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <div className="container">
+      <RouterProvider router={router} />
+    </div>
+  </React.StrictMode>
 );
