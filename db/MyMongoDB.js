@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+import { MongoClient } from "mongodb";
 
 function MyMongoDB() {
   const myDB = {};
@@ -27,4 +27,4 @@ function MyMongoDB() {
   return myDB;
 }
 
-module.exports = MyMongoDB();
+export const databaseManager = MyMongoDB();

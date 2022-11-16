@@ -1,7 +1,9 @@
-var express = require("express");
-var router = express.Router();
-const databaseManager = require("../db/MyMongoDB");
+import express from "express";
+import { databaseManager } from "../db/MyMongoDB.js";
 
+const router = express.Router();
+
+// By Zhiyi Jin
 /* GET all dishes. */
 router.post("/api/dishes", async (req, res) => {
   console.log(req.body.type);
@@ -20,4 +22,4 @@ router.post("/api/dishes", async (req, res) => {
   res.json(data);
 });
 
-module.exports = router;
+export default router;
