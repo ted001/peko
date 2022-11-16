@@ -3,7 +3,7 @@ import Search from "../components/Search/Search";
 import List from "../components/List/List";
 import Footer from "../components/Footer/Footer";
 
-export default function Main() {
+export default function Meals() {
    let [dishes, setDishes] = useState([]);
    let [totalPrice, setTotalPrice] = useState(0);
    let [checkedItems, setCheckedItems] = useState(0);

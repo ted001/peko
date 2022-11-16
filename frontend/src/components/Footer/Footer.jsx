@@ -6,7 +6,7 @@ export default function Footer(props) {
   let navigate = useNavigate();
 
   let onOrderNowHandler = () => {
-    navigate("/OrderNow");
+    navigate("/orderNow");
   };
 
   return (
