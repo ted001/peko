@@ -21,3 +21,8 @@ cd frontend => yarn install => yarn start
 
 Assume that you have the mongo command line utils installed(uses mongoimport)
 Then go to http://localhost:3000
+
+## Release Note
+
+Zhiyi Jin 60% released branch:
+https://github.com/Akhilasulgante/peko/releases/tag/60%25_release_tag_Nov15
