@@ -1,6 +1,8 @@
 // Zhiyi Jin
 
 import React, { useState, useRef } from "react";
+import PropTypes from "prop-types";
+
 import "./Search.css";
 
 export default function Search(props) {
@@ -131,3 +133,7 @@ export default function Search(props) {
     </div>
   );
 }
+
+Search.propTypes = {
+  updateSearchResult: PropTypes.func,
+};

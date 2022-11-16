@@ -1,8 +1,8 @@
 // Zhiyi Jin
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function List(props) {
-
   let handleChecked = (dish) => {
     console.log("handleChecked");
     return (event) => {
@@ -46,3 +46,8 @@ export default function List(props) {
     </div>
   );
 }
+
+List.propTypes = {
+  dishes: PropTypes.object,
+  updateCheckedItems: PropTypes.func,
+};

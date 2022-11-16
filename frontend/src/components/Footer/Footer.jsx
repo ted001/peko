@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Footer.css";
+import PropTypes from "prop-types";
 
 export default function Footer(props) {
   let navigate = useNavigate();
@@ -67,3 +68,8 @@ export default function Footer(props) {
     </div>
   );
 }
+
+Footer.propTypes = {
+  checkedItems: PropTypes.number.isRequired,
+  totalPrice: PropTypes.number.isRequired,
+};
