@@ -1,10 +1,11 @@
 // Zhiyi Jin
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Search from "../components/Search/Search";
 import List from "../components/List/List";
 import Footer from "../components/Footer/Footer";
 
 export default function Meals() {
+  console.log("Meals page");
   let [dishes, setDishes] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
   let [checkedItems, setCheckedItems] = useState(0);
@@ -15,10 +16,21 @@ export default function Meals() {
     setCheckedItems(0);
   };
 
+  async function getAllMeals() {
+    console.log("getAllMeals");
+    const status = await fetch("/api/getAllMeals");
+    let dishes = await status.json();
+    setDishes(dishes);
+  }
+
+  useEffect(() => {
+    getAllMeals();
+  }, []);
+
   // Refined add algorithm for decimal
   // Ref to https://blog.csdn.net/WuLex/article/details/104628132
   function accAdd(arg1, arg2) {
-    var r1, r2, m, c;
+    let r1, r2, m, c;
     try {
       r1 = arg1.toString().split(".")[1].length;
     } catch (e) {
@@ -32,7 +44,7 @@ export default function Meals() {
     c = Math.abs(r1 - r2);
     m = Math.pow(10, Math.max(r1, r2));
     if (c > 0) {
-      var cm = Math.pow(10, c);
+      let cm = Math.pow(10, c);
       if (r1 > r2) {
         arg1 = Number(arg1.toString().replace(".", ""));
         arg2 = Number(arg2.toString().replace(".", "")) * cm;
@@ -50,7 +62,7 @@ export default function Meals() {
   // Refined sub algorithm for decimal
   // Ref to https://blog.csdn.net/WuLex/article/details/104628132
   function accSub(arg1, arg2) {
-    var r1, r2, m, n;
+    let r1, r2, m, n;
     try {
       r1 = arg1.toString().split(".")[1].length;
     } catch (e) {
@@ -61,25 +73,31 @@ export default function Meals() {
     } catch (e) {
       r2 = 0;
     }
-    m = Math.pow(10, Math.max(r1, r2)); //last modify by deeka //动态控制精度长度
+    m = Math.pow(10, Math.max(r1, r2));
     n = r1 >= r2 ? r1 : r2;
     return ((arg1 * m - arg2 * m) / m).toFixed(n);
   }
 
   let updateCheckedItems = (dish, checked) => {
     if (checked) {
-      setTotalPrice(accAdd(totalPrice, dish.price));
-      setCheckedItems(accAdd(checkedItems, 1));
+      setTotalPrice(Number(accAdd(totalPrice, dish.price)));
+      setCheckedItems(Number(accAdd(checkedItems, 1)));
     } else {
-      setTotalPrice(accSub(totalPrice, dish.price));
-      setCheckedItems(accSub(checkedItems, 1));
+      setTotalPrice(Number(accSub(totalPrice, dish.price)));
+      setCheckedItems(Number(accSub(checkedItems, 1)));
     }
   };
 
   return (
     <div>
       <Search updateSearchResult={updateSearchResult} />
-      <List dishes={dishes} updateCheckedItems={updateCheckedItems} />
+      {dishes.length !== 0 ? (
+        <List
+          dishes={dishes}
+          updateCheckedItems={updateCheckedItems}
+        />
+      ) : null}
+      {/* <List dishes={dishes} /> */}
       <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
     </div>
   );

@@ -4,8 +4,19 @@ import { databaseManager } from "../db/MyMongoDB.js";
 const router = express.Router();
 
 // By Zhiyi Jin
-/* GET all dishes. */
-router.post("/api/dishes", async (req, res) => {
+/* Get all dishes */
+router.get("/api/getAllMeals", async (req, res) => {
+  let data;
+  try {
+    data = await databaseManager.read("dishes", {});
+  } catch (err) {
+    console.log("err", err);
+  }
+  res.json(data);
+});
+
+/* Filter dishes by options */
+router.post("/api/filterMeals", async (req, res) => {
   console.log(req.body.type);
   console.log(req.body.taste);
   console.log(req.body.price);

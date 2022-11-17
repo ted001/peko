@@ -1,8 +1,10 @@
 // Zhiyi Jin
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 export default function List(props) {
+  const { dishes } = props;
+
   let handleChecked = (dish) => {
     console.log("handleChecked");
     return (event) => {
@@ -11,10 +13,10 @@ export default function List(props) {
     };
   };
 
-  console.log("list render");
+  console.log("list render", dishes.length);
   return (
     <div className="list-group w-auto">
-      {props.dishes.map((dish) => {
+      {dishes.map((dish) => {
         return (
           <label key={dish.key} className="list-group-item d-flex gap-3">
             <img
@@ -48,6 +50,6 @@ export default function List(props) {
 }
 
 List.propTypes = {
-  dishes: PropTypes.object,
+  dishes: PropTypes.array,
   updateCheckedItems: PropTypes.func,
 };

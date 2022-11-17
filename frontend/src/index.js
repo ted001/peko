@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Meals from "./pages/Meals";
 import OrderNow from "./pages/OrderNow";
@@ -26,9 +26,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <div className="container">
-      <RouterProvider router={router} />
-    </div>
-  </React.StrictMode>
+  <div className="container">
+    <RouterProvider router={router} />
+  </div>
 );

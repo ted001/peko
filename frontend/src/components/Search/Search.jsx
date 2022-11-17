@@ -39,7 +39,7 @@ export default function Search(props) {
       price: budgetInput.current.value,
     };
 
-    const status = await fetch("/api/dishes", {
+    const status = await fetch("/api/filterMeals", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
