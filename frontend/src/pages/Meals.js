@@ -3,9 +3,11 @@ import React, { useState, useEffect } from "react";
 import Search from "../components/Search/Search";
 import List from "../components/List/List";
 import Footer from "../components/Footer/Footer";
+import Loading from "../components/Loading/Loading";
 
 export default function Meals() {
   console.log("Meals page");
+  let [loading, setLoading] = useState(true);
   let [dishes, setDishes] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
   let [checkedItems, setCheckedItems] = useState(0);
@@ -18,9 +20,16 @@ export default function Meals() {
 
   async function getAllMeals() {
     console.log("getAllMeals");
-    const status = await fetch("/api/getAllMeals");
-    let dishes = await status.json();
-    setDishes(dishes);
+    setLoading(true);
+    try {
+      const status = await fetch("/api/getAllMeals");
+      let dishes = await status.json();
+      setLoading(false);
+      setDishes(dishes);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -88,14 +97,32 @@ export default function Meals() {
     }
   };
 
+  if (loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+
+  if (dishes.length === 0) {
+    return (
+      <main>
+        <div className="title">
+          <h2>No Meals Available Now</h2>
+          <button className="btn btn-primary" onClick={() => getAllMeals()}>
+            refresh
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <div>
       <Search updateSearchResult={updateSearchResult} />
       {dishes.length !== 0 ? (
-        <List
-          dishes={dishes}
-          updateCheckedItems={updateCheckedItems}
-        />
+        <List dishes={dishes} updateCheckedItems={updateCheckedItems} />
       ) : null}
       {/* <List dishes={dishes} /> */}
       <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
