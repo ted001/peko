@@ -1,42 +1,34 @@
-// Zhiyi Jin
 import React from "react";
-import foodBg from "../images/foodBg.jpg";
-import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
+import Login from "../components/Login/Login";
 export default function Home() {
   return (
-    <div className="text-center ">
-      <div>
-        <h1>Peco</h1>
-        <p>
-          Welcome to Peco!! We know you are very busy with your life. So We want
-          to provide you with healthy and various food near you in a short time.
-        </p>
-      </div>
+    <div>
+      <section className="vh-100">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-6 text-black">
+              <div className="px-5 ms-xl-4">
+                <span className="h1 fw-bold mb-0">Peko</span>
+              </div>
 
-      <div className="col-12">
-        <img
-          style={{
-            width: "100%",
-          }}
-          src={foodBg}
-          alt="food delivery"
-        />
-        Picture from{" "}
-        <a href="https://imageio.forbes.com/specials-images/imageserve/5fe16bf53ba69575bb1cd088/Food-delivery-/0x0.jpg?format=jpg&crop=8995,6000,x0,y0,safe&width=960">
-          forbes.com
-        </a>
-      </div>
-      <div className="col-12 mt-5">
-        <Link to="/meals">
-          <button type="button" className="btn btn-color btn-primary btn-lg">
-            Browse All Meals
-          </button>
-        </Link>
-      </div>
-      <footer className="align-item-center">
-        <p>&copy; 2022 copy right</p>
-      </footer>
+              <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+                <Login />
+              </div>
+            </div>
+            <div className="col-sm-6 px-0 d-none d-sm-block">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+                alt="Login image"
+                className="w-100 vh-100"
+                style={{ objectfit: "cover", objectposition: "left" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
+// Home.PropTypes = {};
