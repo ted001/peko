@@ -1,0 +1,82 @@
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handlelogin = async (e) => {
+    e.preventDefault();
+    let data = {
+      email,
+      password,
+    };
+    // console.log("in handlelogin", data);
+    const res = await fetch("/users/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    let response = await res.json();
+    if (response.userexists && response.success) {
+      console.log("success and user exists");
+    } else if (!response.userexists) {
+      console.log("user does  not exists");
+    }
+  };
+  return (
+    <div>
+      <form style={{ width: "23rem" }} onSubmit={handlelogin}>
+        <h3 className="fw-normal mb-3 pb-3" style={{ letterspacing: "1px" }}>
+          Log in
+        </h3>
+
+        <div className="form-outline mb-4">
+          <input
+            type="email"
+            id="form2Example18"
+            className="form-control form-control-lg"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            required
+          />
+          <label className="form-label" htmlFor="form2Example18">
+            Email address
+          </label>
+        </div>
+
+        <div className="form-outline mb-4">
+          <input
+            type="password"
+            id="form2Example28"
+            className="form-control form-control-lg"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            required
+          />
+          <label className="form-label" htmlFor="form2Example28">
+            Password
+          </label>
+        </div>
+
+        <div className="pt-1 mb-4">
+          <button className="btn btn-info btn-lg btn-block" type="submit">
+            Login
+          </button>
+        </div>
+
+        <p>
+          Don't have an account?{" "}
+          <a href="/register" className="link-info">
+            Register here
+          </a>
+        </p>
+      </form>
+    </div>
+  );
+}
+
+// Login.prototypes = {};
