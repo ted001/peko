@@ -79,12 +79,8 @@ function MyMongoDB() {
       let res = await colname.findOne({
         email: data.email,
       });
-      console.log("in suth", res, data);
-      if (res.password === data.password) {
-        console.log("in authuser success");
-        return true;
-      }
-      return false;
+
+      return res;
     } catch (e) {
       console.log(e);
     } finally {

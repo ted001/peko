@@ -4,9 +4,10 @@ import Search from "../components/Search/Search";
 import List from "../components/List/List";
 import Footer from "../components/Footer/Footer";
 import Loading from "../components/Loading/Loading";
-
+import Navbar from "../components/Navbar/Navbar";
 export default function Meals() {
   console.log("Meals page");
+
   let [loading, setLoading] = useState(true);
   let [dishes, setDishes] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
@@ -120,6 +121,7 @@ export default function Meals() {
 
   return (
     <div>
+      <Navbar />
       <Search updateSearchResult={updateSearchResult} />
       {dishes.length !== 0 ? (
         <List dishes={dishes} updateCheckedItems={updateCheckedItems} />

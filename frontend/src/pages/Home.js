@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Login from "../components/Login/Login";
+import url from "../images/landbg.jpg";
+import urlcss from "../images/logincss-bg.png";
 export default function Home() {
   return (
     <div>
@@ -16,14 +18,14 @@ export default function Home() {
                 <Login />
               </div>
             </div>
-            <div className="col-sm-6 px-0 d-none d-sm-block">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+            {/* <div className="col-sm-6 px-0 d-none d-sm-block">
+              {/* <img
+                src={url}
                 alt="Login image"
-                className="w-100 vh-100"
+                className="w-50"
                 style={{ objectfit: "cover", objectposition: "left" }}
-              />
-            </div>
+              /> 
+            </div> */}
           </div>
         </div>
       </section>

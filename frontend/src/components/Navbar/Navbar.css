@@ -1,0 +1,36 @@
+.btn {
+  padding: 0.45rem 1.5rem 0.35rem;
+}
+
+.gradient-custom {
+  background: #de2323;
+  background: -webkit-linear-gradient(
+    to right,
+    rgb(209, 68, 43),
+    rgb(179, 65, 45)
+  );
+  /* background: linear-gradient(to right, rgb(212, 100, 92), rgb(206, 60, 57)); */
+  /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  background: #ef7c8b;
+  background: -webkit-linear-gradient(top left, #ef7c8b, #f9165b);
+  background: -moz-linear-gradient(top left, #ef7c8b, #f9165b);
+  background: linear-gradient(to bottom right, #ef7c8b, #f9165b);
+}
+
+.rightContainer {
+  align-items: right;
+  /* width: 300px; */
+}
+.leftcontainer {
+  padding-left: 20px;
+  width: 1000px;
+}
+
+.usebutton {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
