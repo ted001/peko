@@ -25,7 +25,9 @@ export default function Navbar() {
       let res = await fetch("/users/getCurrentUser");
       //   console.log("In getcurrentuser", await res.json().user?.FirstName);
       let resuser = await res.json();
-
+      console.log("resuser", resuser);
+      let fname = resuser.user?.FirstName;
+      console.log(fname);
       setUser(fname);
     }
     getCurrentUser();
