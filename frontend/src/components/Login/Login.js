@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
+import { useNavigate } from "react-router-dom";
+import url from "../../images/logincss-bg.png";
+import "./Login.css";
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -11,6 +14,7 @@ export default function Login() {
       email,
       password,
     };
+
     // console.log("in handlelogin", data);
     const res = await fetch("/users/login", {
       method: "POST",
@@ -19,10 +23,15 @@ export default function Login() {
     });
 
     let response = await res.json();
+    console.log(response);
     if (response.userexists && response.success) {
       console.log("success and user exists");
-    } else if (!response.userexists) {
-      console.log("user does  not exists");
+      navigate("/meals");
+    } else if (response.userexists && !response.success) {
+      alert("username and password do not match");
+    } else {
+      alert("You seem new, please register");
+      navigate("/register");
     }
   };
   return (
@@ -75,6 +84,7 @@ export default function Login() {
           </a>
         </p>
       </form>
+      <img src={url} alt="animation image" id="bike" />
     </div>
   );
 }

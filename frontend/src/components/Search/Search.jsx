@@ -68,7 +68,8 @@ export default function Search(props) {
             SetFood_Type(e.target.value);
           }}
           className="form-select"
-          required>
+          required
+        >
           <option key="all" value="Select Food Type">
             Select Food Type
           </option>
@@ -92,7 +93,8 @@ export default function Search(props) {
             SetFood_Taste(e.target.value);
           }}
           className="form-select"
-          required>
+          required
+        >
           <option key="all" value="Select Food Taste">
             Select Food Taste
           </option>
@@ -113,7 +115,8 @@ export default function Search(props) {
           type="text"
           ref={budgetInput}
           className="form-control"
-          placeholder="Eg: 10"></input>
+          placeholder="Eg: 10"
+        ></input>
         {/* <div className="d-flex ajustify-content-center ">
           <input style={{ width: "60px" }} type="text" className="form-control" placeholder="min"></input>
           <input type="range" id="budgetRange"></input>
@@ -125,7 +128,8 @@ export default function Search(props) {
           <button
             onClick={onSearchHandler}
             type="button"
-            className="btn btn-primary">
+            className="btn btn-primary"
+          >
             Search
           </button>
         </div>

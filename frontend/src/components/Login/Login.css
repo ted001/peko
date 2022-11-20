@@ -1,0 +1,27 @@
+#bike {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: left;
+  transform: scaleX(-1);
+  bottom: 10%;
+  display: block;
+  position: absolute;
+  animation: linear infinite alternate;
+  animation-name: run;
+  animation-duration: 10s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes run {
+  0% {
+    left: 0;
+    transform: translateX(-100%);
+    direction: ltr;
+  }
+  100% {
+    left: 100%;
+    transform: translateX(100%);
+    -moz-transform: rotate(360deg);
+  }
+}
