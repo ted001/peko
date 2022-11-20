@@ -89,6 +89,22 @@ function MyMongoDB() {
     return false;
   };
 
+  myDB.deleteuser = async (collectionName, data) => {
+    const connection = new MongoClient(url);
+    await connection.connect();
+    const db = connection.db(DB_NAME);
+    const colname = db.collection(collectionName);
+    try {
+      await colname.deleteOne(data);
+      console.log("deleting");
+      return true;
+    } catch (e) {
+      console.log(e);
+    } finally {
+      await connection.close();
+    }
+    return false;
+  };
   return myDB;
 }
 

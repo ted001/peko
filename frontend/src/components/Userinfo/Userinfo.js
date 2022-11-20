@@ -1,5 +1,15 @@
-import React from "react";
-
+import React, { useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import Userform from "../Userform/Userform";
+import { useNavigate } from "react-router-dom";
+import "./Userinfo.css";
 export default function Userinfo() {
-  return <div>User hub page lksfpoiashoniushdjfn oaiuwd</div>;
+  const [user, setUser] = useState({});
+
+  return (
+    <div>
+      <Navbar />
+      <Userform />
+    </div>
+  );
 }

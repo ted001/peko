@@ -38,7 +38,7 @@ passport.serializeUser(function (user, cb) {
 });
 
 passport.deserializeUser(function (user, cb) {
-  console.log("deserialize");
+  console.log("deserialize", user);
   process.nextTick(function () {
     return cb(null, user);
   });
@@ -124,6 +124,31 @@ router.post("/logout", (req, res, next) => {
     res.status(200).send({ logoutsuccess: true });
   });
   //   res.redirect("/login");
+});
+
+router.post("/delete", async (req, res) => {
+  try {
+    let data = req.body;
+    console.log("in delete users.js", data);
+    let email = data.email;
+    let checkuser = await databaseManager.finduser("users", email);
+
+    if (checkuser) {
+      let dbstate = await databaseManager.deleteuser("users", { email });
+      if (dbstate) {
+        req.logout(function (err) {
+          if (err) {
+            return next(err);
+          }
+        });
+        res.status(200).send({ success: true });
+      } else {
+        res.status(404).send({ success: false });
+      }
+    }
+  } catch (err) {
+    console.log("err", err);
+  }
 });
 
 export default router;
