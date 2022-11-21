@@ -18,14 +18,14 @@ export default function Home() {
                 <Login />
               </div>
             </div>
-            {/* <div className="col-sm-6 px-0 d-none d-sm-block">
-              {/* <img
+            <div className="col-sm-6 px-0 d-none d-sm-block">
+              <img
                 src={url}
                 alt="Login image"
                 className="w-50"
                 style={{ objectfit: "cover", objectposition: "left" }}
-              /> 
-            </div> */}
+              />
+            </div>
           </div>
         </div>
       </section>

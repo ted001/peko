@@ -51,7 +51,7 @@ export default function Userhub() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-    console.log(res);
+    // console.log(res);
     setRender(fname + lname);
   };
 

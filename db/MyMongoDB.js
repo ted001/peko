@@ -53,11 +53,11 @@ function MyMongoDB() {
     const db = connection.db(DB_NAME);
     const colname = db.collection(collectionName);
     try {
-      // console.log(data);
+      console.log(email, "in fu");
       let res = await colname.findOne({
         email,
       });
-      if (Object.keys(res).length === 0) {
+      if (!res) {
         return false;
       }
       return true;
