@@ -1,25 +1,33 @@
 #bike {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: left;
-  transform: translateX(-100);
-  bottom: 10%;
-  display: block;
-  position: absolute;
-  animation: linear infinite alternate;
-  animation-name: run;
-  animation-duration: 10s;
-  animation-direction: alternate-reverse;
+  width: 100px;
+
+  height: 100px;
+
+  position: relative;
+
+  animation: bike 8s infinite;
 }
 
-@keyframes run {
+@keyframes bike {
   0% {
-    left: 100%;
-    transform: translateX(-100%);
+    left: 250px;
   }
+
+  50% {
+    left: 20px;
+
+    transform: scaleX(1);
+  }
+
+  51% {
+    transform: scaleX(-1);
+  }
+
   100% {
-    left: 0%;
-    transform: translateX(100%);
+    left: 75%;
+
+    background-size: contain;
+
+    transform: scaleX(-1);
   }
 }

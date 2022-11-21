@@ -107,11 +107,11 @@ router.post("/register", async (req, res) => {
 
 router.get("/success", async (req, res) => {
   res.status(200).send({ success: true, userexists: true });
-  console.log(req.session);
+  //   console.log(req.session);
 });
 
 router.get("/failure", async (req, res) => {
-  console.log(req);
+  //   console.log(req);
   let checkuser = await databaseManager.finduser("users", req.email);
   if (checkuser) {
     res.status(404).send({ success: false, userexists: true });
