@@ -69,6 +69,28 @@ function MyMongoDB() {
     return false;
   };
 
+  myDB.getuser = async (collectionName, email) => {
+    const connection = new MongoClient(url);
+    await connection.connect();
+    const db = connection.db(DB_NAME);
+    const colname = db.collection(collectionName);
+    try {
+      // console.log(data);
+      let res = await colname.findOne({
+        email,
+      });
+      if (Object.keys(res).length === 0) {
+        return [];
+      }
+      return res;
+    } catch (e) {
+      console.log(e);
+    } finally {
+      await connection.close();
+    }
+    return false;
+  };
+
   myDB.authuser = async (collectionName, data) => {
     const connection = new MongoClient(url);
     await connection.connect();
@@ -113,17 +135,30 @@ function MyMongoDB() {
     const colname = db.collection(collectionName);
     try {
       console.log(data);
-      let res = await colname.updateOne(
-        { email: data.email },
-        {
-          $set: {
-            FirstName: data.fname,
-            LastName: data.lname,
-            password: data.password,
-          },
-        }
-      );
-      return true;
+      if (data.password) {
+        let res = await colname.updateOne(
+          { email: data.email },
+          {
+            $set: {
+              FirstName: data.fname,
+              LastName: data.lname,
+              password: data.password,
+            },
+          }
+        );
+        return true;
+      } else {
+        let res = await colname.updateOne(
+          { email: data.email },
+          {
+            $set: {
+              FirstName: data.fname,
+              LastName: data.lname,
+            },
+          }
+        );
+        return true;
+      }
     } catch (e) {
       console.log(e);
     } finally {

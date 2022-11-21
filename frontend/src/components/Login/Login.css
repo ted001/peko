@@ -3,7 +3,7 @@
   height: 150px;
   object-fit: cover;
   object-position: left;
-  transform: scaleX(-1);
+  transform: translateX(-100);
   bottom: 10%;
   display: block;
   position: absolute;
@@ -15,13 +15,11 @@
 
 @keyframes run {
   0% {
-    left: 0;
+    left: 100%;
     transform: translateX(-100%);
-    direction: ltr;
   }
   100% {
-    left: 100%;
+    left: 0%;
     transform: translateX(100%);
-    -moz-transform: rotate(360deg);
   }
 }

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
-
+import { useNavigate } from "react-router-dom";
 export default function Userhub() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [render, setRender] = useState("");
+  let navigate = useNavigate();
   useEffect(() => {
     async function getCurrentUser() {
-      let res = await fetch("/users/getCurrentUser");
+      let res = await fetch("/users/fetchUpdatedUser");
 
       let resuser = await res.json();
       console.log("resuser", resuser);
@@ -21,10 +22,10 @@ export default function Userhub() {
       setFname(firname);
       setLname(lasname);
       setEmail(umail);
-      setPassword(passwe);
     }
     getCurrentUser();
-  }, []);
+    console.log("effect called in Userhub");
+  }, [render]);
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -34,37 +35,42 @@ export default function Userhub() {
       email,
       password,
     };
+    console.log({ password }, password === "");
+    if (!password || password === "") {
+      delete data[password];
+    }
     const res = await fetch("/users/update", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
     console.log(res);
+    setRender(fname + lname);
   };
 
   const handleDelete = async (e) => {
-    // e.preventDefault();
-    // let res = await fetch("/users/getCurrentUser");
-    // let resuser = await res.json();
-    // let email = resuser.user?.email;
-    // console.log("email in delte", email);
-    // const response = await fetch("/users/delete", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ email }),
-    // });
-    // let resdelete = await response.json();
-    // if (resdelete.success) {
-    //   alert("Sorry to see you go");
-    //   navigate("/");
-    // } else {
-    //   alert("Error in deleting");
-    // }
+    e.preventDefault();
+    let res = await fetch("/users/getCurrentUser");
+    let resuser = await res.json();
+    let email = resuser.user?.email;
+    console.log("email in delte", email);
+    const response = await fetch("/users/delete", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    let resdelete = await response.json();
+    if (resdelete.success) {
+      alert("Sorry to see you go");
+      navigate("/");
+    } else {
+      alert("Error in deleting");
+    }
   };
 
   return (
     <div>
-      <Navbar />
+      <Navbar render={render} />
       <div>
         <section className="container">
           <h3>Please update your information</h3>
