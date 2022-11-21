@@ -1,19 +1,16 @@
 import React from "react";
 import SignUp from "../components/SignUp/SignUp";
-
+import url from "../images/register.jpg";
 export default function Register() {
   return (
     <div>
       <section className="text-center">
-        // Change image later
         <div
-          className="p-5 bg-image"
-          //   style={{
-          //     backgroundimage: url(
-          //       "https://mdbootstrap.com/img/new/textures/full/171.jpg"
-          //     ),
-          //     height: "300px",
-          //   }}
+          class="p-5 bg-image"
+          style="
+        background-image: url('');
+        height: 300px;
+        "
         ></div>
         <div
           className="card mx-4 mx-md-5 shadow-5-strong"
