@@ -7,6 +7,8 @@ export default function Userhub() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [render, setRender] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
   let navigate = useNavigate();
   useEffect(() => {
     async function getCurrentUser() {
@@ -18,10 +20,13 @@ export default function Userhub() {
       let lasname = resuser.user?.LastName;
       let umail = resuser.user?.email;
       let passwe = resuser.user?.password;
-
+      let addr = resuser.user?.Address;
+      let phn = resuser.user?.Phoneno;
       setFname(firname);
       setLname(lasname);
       setEmail(umail);
+      setAddress(addr);
+      setPhone(phn);
     }
     getCurrentUser();
     console.log("effect called in Userhub");
@@ -34,6 +39,8 @@ export default function Userhub() {
       lname,
       email,
       password,
+      address,
+      phone,
     };
     console.log({ password }, password === "");
     if (!password || password === "") {
@@ -112,7 +119,7 @@ export default function Userhub() {
 
             <div className="form-outline mb-4">
               <label>{email}</label>
-
+              <br></br>
               <label className="form-label" htmlFor="form3Example3">
                 Email address
               </label>
@@ -129,6 +136,34 @@ export default function Userhub() {
               />
               <label className="form-label" htmlFor="form3Example4">
                 New password:
+              </label>
+            </div>
+            <div className="form-outline mb-4">
+              <input
+                type="text"
+                id="form3Example4"
+                className="form-control"
+                defaultValue={address}
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                }}
+              />
+              <label className="form-label" htmlFor="form3Example4">
+                Address:
+              </label>
+            </div>
+            <div className="form-outline mb-4">
+              <input
+                type="number"
+                id="form3Example4"
+                className="form-control"
+                defaultValue={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
+              />
+              <label className="form-label" htmlFor="form3Example4">
+                Phone no:
               </label>
             </div>
             <div className="buttondiv">

@@ -143,6 +143,8 @@ function MyMongoDB() {
               FirstName: data.fname,
               LastName: data.lname,
               password: data.password,
+              Address: data.address,
+              Phoneno: data.phone,
             },
           }
         );
@@ -154,6 +156,8 @@ function MyMongoDB() {
             $set: {
               FirstName: data.fname,
               LastName: data.lname,
+              Address: data.address,
+              Phoneno: data.phone,
             },
           }
         );
