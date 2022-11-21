@@ -27,8 +27,8 @@ export default function Login() {
     if (response.userexists && response.success) {
       console.log("success and user exists");
       navigate("/meals");
-    } else if (response.userexists && !response.success) {
-      alert("username and password do not match");
+    } else if (!response.success) {
+      alert("username or password do not match");
     } else {
       alert("You seem new, please register");
       navigate("/register");
