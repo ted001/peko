@@ -6,12 +6,18 @@
     "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
     "initdb": "mongoimport -d quick-food-ordering-db -c dishes --jsonArray --file ./data/dishes.json"
   },
+  "engines": {
+    "node": "16.17.1"
+  },
+  "author": "akhila, Zhiyi Jin",
+  "license": "MIT",
   "type": "module",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
     "express": "~4.16.1",
     "express-session": "^1.17.3",
     "mongodb": "^4.11.0",
