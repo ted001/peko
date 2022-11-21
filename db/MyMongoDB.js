@@ -114,7 +114,7 @@ function MyMongoDB() {
     try {
       console.log(data);
       let res = await colname.updateOne(
-        { email: data.dmail },
+        { email: data.email },
         {
           $set: {
             FirstName: data.fname,

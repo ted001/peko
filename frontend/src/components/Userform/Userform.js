@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-export default function Userform({ user, setUser }) {
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
+export default function Userform({ user }) {
+  const [fname, setFname] = useState(user.FirstName);
+  const [lname, setLname] = useState(user.LastName);
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   // console.log("line 9", dmail, "user email", user.email);
   useEffect(() => {
     function getCurrentUser() {
-      setFname(user.FirstName);
+      // setFname(user.FirstName);
       setLname(user.LastName);
       setMail(user.email);
       setPassword(user.password);
@@ -18,7 +18,7 @@ export default function Userform({ user, setUser }) {
   }, []);
   // const navigate = useNavigate();
   const handleDelete = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // let res = await fetch("/users/getCurrentUser");
     // let resuser = await res.json();
     // let email = resuser.user?.email;
