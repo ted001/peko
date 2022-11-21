@@ -5,7 +5,7 @@ import Signout from "../Signout/Signout";
 import Currentuser from "../Currentuser/Currentuser";
 // import Userhub from "../../pages/Userhub.js";
 import { useNavigate } from "react-router-dom";
-export default function Navbar() {
+export default function Navbar({ render }) {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
   //   async function getCurrentUser() {
@@ -22,7 +22,7 @@ export default function Navbar() {
 
   useEffect(() => {
     async function getCurrentUser() {
-      let res = await fetch("/users/getCurrentUser");
+      let res = await fetch("/users/fetchUpdatedUser");
       //   console.log("In getcurrentuser", await res.json().user?.FirstName);
       let resuser = await res.json();
       console.log("resuser", resuser);
@@ -31,13 +31,13 @@ export default function Navbar() {
       setUser(fname);
     }
     getCurrentUser();
-  }, []);
+  }, [render]);
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light gradient-custom">
         <div className="leftcontainer">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/meals">
             Peko
           </a>
         </div>

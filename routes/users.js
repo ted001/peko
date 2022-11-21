@@ -4,6 +4,8 @@ import { databaseManager } from "../db/MyMongoDB.js";
 import passport from "passport";
 import LocalStrategy from "passport-local";
 import session from "express-session";
+import bcrypt from "bcrypt";
+const saltRounds = 10;
 const router = express.Router();
 
 const strategy = new LocalStrategy(
@@ -15,7 +17,8 @@ const strategy = new LocalStrategy(
       let checkuser = await databaseManager.finduser("users", email);
       if (checkuser) {
         let user = await databaseManager.authuser("users", data);
-        if (user.password === password) {
+        let match = await bcrypt.compare(password, user.password);
+        if (match) {
           return cb(null, user);
         }
       }
@@ -49,16 +52,26 @@ router.get("/getCurrentUser", (req, res) => {
   res.json({ user: req.session.passport?.user, msg: "something" });
 });
 
+router.get("/fetchUpdatedUser", async (req, res) => {
+  let user = await databaseManager.getuser(
+    "users",
+    req.session.passport?.user.email
+  );
+  console.log("fetch updated user", user);
+  res.json({ user });
+});
+
 router.post("/register", async (req, res) => {
   let data;
   //   console.log("in post", data);
   try {
     data = req.body;
-    console.log(data);
+    console.log("register", data);
     let checkuser = await databaseManager.finduser("users", data.email);
     if (checkuser) {
       res.status(200).send({ userexists: true });
     }
+    data.password = await bcrypt.hash(data.password, saltRounds);
     let dbstate = await databaseManager.insertuser("users", data);
     if (dbstate) {
       res.status(200).send({ success: true, userexists: false });
@@ -154,8 +167,20 @@ router.post("/delete", async (req, res) => {
 router.post("/update", async (req, res) => {
   let data = req.body;
   try {
+    console.log(data);
+    if (data.password) {
+      data.password = await bcrypt.hash(data.password, saltRounds);
+    }
     let dbstate = await databaseManager.updateuser("users", data);
-  } catch (err) {}
+
+    if (dbstate) {
+      res.status(200).send({ updated: true });
+    } else {
+      res.status(404).send({ updated: false });
+    }
+  } catch (err) {
+    console.log("error", err);
+  }
 });
 
 export default router;
