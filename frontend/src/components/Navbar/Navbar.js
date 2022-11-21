@@ -69,7 +69,3 @@ export default function Navbar() {
     </div>
   );
 }
-
-Navbar.propTypes = {
-  user: PropTypes.string,
-};

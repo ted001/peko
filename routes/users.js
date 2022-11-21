@@ -151,4 +151,11 @@ router.post("/delete", async (req, res) => {
   }
 });
 
+router.post("/update", async (req, res) => {
+  let data = req.body;
+  try {
+    let dbstate = await databaseManager.updateuser("users", data);
+  } catch (err) {}
+});
+
 export default router;

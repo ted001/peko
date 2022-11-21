@@ -105,6 +105,32 @@ function MyMongoDB() {
     }
     return false;
   };
+
+  myDB.updateuser = async (collectionName, data) => {
+    const connection = new MongoClient(url);
+    await connection.connect();
+    const db = connection.db(DB_NAME);
+    const colname = db.collection(collectionName);
+    try {
+      console.log(data);
+      let res = await colname.updateOne(
+        { email: data.dmail },
+        {
+          $set: {
+            FirstName: data.fname,
+            LastName: data.lname,
+            password: data.password,
+          },
+        }
+      );
+      return true;
+    } catch (e) {
+      console.log(e);
+    } finally {
+      await connection.close();
+    }
+    return false;
+  };
   return myDB;
 }
 
