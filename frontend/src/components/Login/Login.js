@@ -1,7 +1,7 @@
 //Akhila
 //Did not use proptypes as it was not required
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import url from "../../images/logincss-bg.png";
 import urlhome from "../../images/home.png";
 import urlrest from "../../images/rest.png";
@@ -87,9 +87,9 @@ export default function Login() {
 
         <p>
           Don't have an account?{" "}
-          <a href="/register" className="link-success">
+          <Link to="/register" className="link-success">
             Register here
-          </a>
+          </Link>
         </p>
       </form>
       <div className="imagesbh">
