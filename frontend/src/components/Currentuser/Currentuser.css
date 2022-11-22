@@ -1,7 +1,9 @@
+/* Akhila */
 .userbutton {
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
   overflow: hidden;
+  font-weight: bold;
 }

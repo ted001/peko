@@ -1,3 +1,4 @@
+//Akhila
 import React from "react";
 import SignUp from "../components/SignUp/SignUp";
 import url from "../images/register.jpg";
@@ -5,6 +6,7 @@ export default function Register() {
   return (
     <div
       style={{
+        paddingTop: "130px",
         backgroundImage: `url(${url})`,
         backgroundRepeat: "no-repeat",
         width: "1100px",
@@ -13,16 +15,6 @@ export default function Register() {
     >
       <div style={{ paddingLeft: "60px" }}>
         <section className="text-center">
-          {/* <div
-          className="p-5 bg-image"
-          style={{
-            backgroundimage: url(
-              "https://mdbootstrap.com/img/new/textures/full/171.jpg"
-            ),
-            height: "300px",
-          }}
-        ></div> */}
-
           <div
             className="card mx-4 mx-md-5 shadow-5-strong"
             style={{
@@ -33,7 +25,7 @@ export default function Register() {
             <div className="card-body py-5 px-md-5">
               <div className="row d-flex justify-content-center">
                 <div className="col-lg-8">
-                  <h2 className="fw-bold mb-5">Sign up now</h2>
+                  <h2 className="fw-bold mb-5">Sign up for tasty food</h2>
                   <SignUp />
                 </div>
               </div>
