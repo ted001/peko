@@ -33,10 +33,12 @@ const router = createBrowserRouter([
   {
     path: "/meals",
     element: <Meals />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/orderNow",
     element: <OrderNow />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

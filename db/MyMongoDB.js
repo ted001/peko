@@ -1,9 +1,10 @@
 import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
+dotenv.config();
 
 function MyMongoDB() {
   const myDB = {};
-  // const url = process.env.DB_URL || "mongodb://localhost:27017";
-  const url = "mongodb+srv://admin-ted:Test123@cluster0.dz0wqq8.mongodb.net/";
+  const url = process.env.DB_URL || "mongodb://localhost:27017";
   const DB_NAME = "quick-food-ordering-db";
 
   myDB.read = async (collectionName, query) => {
