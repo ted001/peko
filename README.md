@@ -3,6 +3,13 @@
 ## Project Objective
 
 This project was built for [CS 5610 Web Class](https://johnguerra.co/classes/webDevelopment_fall_2022/)
+The objective was to build a Full-stack(MERN) food-delivery application that demonstartes Mongo CRUD operations and react functional component knowledge.
+Peko is a food delivery website that provides users with the options of filters on type, taste and budget of the dishes.
+
+Please refer the links below for more details on the design
+[design document](https://docs.google.com/document/d/1jzWYi_rLIvOwMelJkPmKe2k9Y0Ybm0Ga6NWGsU6-QGE/edit)
+[Video demo](https://www.youtube.com/watch?v=tOs2vFTsRKQ)
+[Presentation deck](https://docs.google.com/presentation/d/1zDXrE-026RhZmQj-rGohoPSdSbZRC6I9znmc4vsmnUs/edit#slide=id.g1955c7bca40_0_330)
 
 Authors: Zhiyi Jin and Akhila Sulgante
 
@@ -15,7 +22,7 @@ Authors: Zhiyi Jin and Akhila Sulgante
 ```
 yarn install
 npm run initdb
-yarn start
+npm start
 cd frontend => yarn install => yarn start
 ```
 
@@ -29,3 +36,6 @@ https://github.com/Akhilasulgante/peko/releases/tag/60%25_release_tag_Nov15
 
 Akhila Sulgante 60% release tag: Includes registration and login(frontend and backend) without passport authethication
 [release tag](https://github.com/Akhilasulgante/peko/releases/tag/60%25_Akhila_Nov15)
+
+## Website at a glimpse
+![Login page](Dragster.jpg)
