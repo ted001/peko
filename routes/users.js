@@ -1,9 +1,8 @@
-//Akhila
+//Complete file by Akhila
 import express from "express";
 import { databaseManager } from "../db/MyMongoDB.js";
 import passport from "passport";
 import LocalStrategy from "passport-local";
-import session from "express-session";
 import bcrypt from "bcrypt";
 const saltRounds = 10;
 const router = express.Router();
@@ -26,7 +25,6 @@ const strategy = new LocalStrategy(
     } catch (err) {
       console.log(err);
     }
-    // Authentication successful
     return cb(null, user);
   }
 );
@@ -63,7 +61,6 @@ router.get("/fetchUpdatedUser", async (req, res) => {
 
 router.post("/register", async (req, res) => {
   let data;
-  //   console.log("in post", data);
   try {
     data = req.body;
     console.log("register", data);
@@ -71,6 +68,7 @@ router.post("/register", async (req, res) => {
     if (checkuser) {
       res.status(200).send({ userexists: true });
     }
+    // reference: https://stackoverflow.com/questions/71700127/how-to-properly-encrypt-and-decrypt-passwords-using-react-mongodb-and-express
     data.password = await bcrypt.hash(data.password, saltRounds);
     let dbstate = await databaseManager.insertuser("users", data);
     if (dbstate) {
@@ -83,35 +81,11 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// router.post("/login", async (req, res) => {
-//   let data;
-
-//   try {
-//     data = req.body;
-//     console.log("in post", data);
-//     let checkuser = await databaseManager.finduser("users", data.email);
-//     if (checkuser) {
-//       let dbstate = await databaseManager.authuser("users", data);
-//       if (dbstate) {
-//         res.status(200).send({ success: true, userexists: true });
-//       } else {
-//         res.status(404).send({ success: false, userexists: true });
-//       }
-//     } else {
-//       res.status(200).send({ userexists: false });
-//     }
-//   } catch (err) {
-//     console.log("err", err);
-//   }
-// });
-
 router.get("/success", async (req, res) => {
   res.status(200).send({ success: true, userexists: true });
-  //   console.log(req.session);
 });
 
 router.get("/failure", async (req, res) => {
-  //   console.log(req);
   let checkuser = await databaseManager.finduser("users", req.email);
   if (checkuser) {
     res.status(404).send({ success: false, userexists: true });
@@ -133,10 +107,8 @@ router.post("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    // res.redirect("/");
     res.status(200).send({ logoutsuccess: true });
   });
-  //   res.redirect("/login");
 });
 
 router.post("/delete", async (req, res) => {

@@ -1,3 +1,4 @@
+/* Akhila */
 #bike {
   width: 100px;
 
@@ -30,4 +31,24 @@
 
     transform: scaleX(-1);
   }
+}
+
+.imagesbh {
+  display: flex;
+  padding-top: 200px;
+  padding-left: 200px;
+  width: 600px;
+  height: 400px;
+}
+
+.home {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  left: 1230px;
+}
+
+.rest {
+  width: 100px;
+  height: 100px;
 }

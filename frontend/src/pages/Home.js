@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Login from "../components/Login/Login";
-import url from "../images/landbg.jpg";
+
 import urlcss from "../images/logincss-bg.png";
 export default function Home() {
   return (
@@ -19,12 +19,12 @@ export default function Home() {
               </div>
             </div>
             <div className="col-sm-6 px-0 d-none d-sm-block">
-              <img
+              {/* <img
                 src={url}
                 alt="Login image"
                 className="w-50"
                 style={{ objectfit: "cover", objectposition: "left" }}
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -32,5 +32,3 @@ export default function Home() {
     </div>
   );
 }
-
-// Home.PropTypes = {};
