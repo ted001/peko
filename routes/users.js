@@ -12,11 +12,11 @@ const strategy = new LocalStrategy(
   async function verify(email, password, cb) {
     console.log("verify", email);
     let data = { email, password };
+    let user = await databaseManager.authuser("users", data);
+    let match = await bcrypt.compare(password, user.password);
     try {
       let checkuser = await databaseManager.finduser("users", email);
       if (checkuser) {
-        let user = await databaseManager.authuser("users", data);
-        let match = await bcrypt.compare(password, user.password);
         if (match) {
           return cb(null, user);
         }
@@ -111,7 +111,7 @@ router.post("/logout", (req, res, next) => {
   });
 });
 
-router.post("/delete", async (req, res) => {
+router.post("/delete", async (req, res, next) => {
   try {
     let data = req.body;
     console.log("in delete users.js", data);
