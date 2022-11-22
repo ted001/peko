@@ -25,13 +25,13 @@ function MyMongoDB() {
     }
   };
 
+  //Akhila: User functionality
   myDB.insertuser = async (collectionName, data) => {
     const connection = new MongoClient(url);
     await connection.connect();
     const db = connection.db(DB_NAME);
     const colname = db.collection(collectionName);
     try {
-      // console.log(data);
       let res = await colname.insertOne({
         FirstName: data.fname,
         LastName: data.lname,
@@ -75,7 +75,6 @@ function MyMongoDB() {
     const db = connection.db(DB_NAME);
     const colname = db.collection(collectionName);
     try {
-      // console.log(data);
       let res = await colname.findOne({
         email,
       });
@@ -97,7 +96,6 @@ function MyMongoDB() {
     const db = connection.db(DB_NAME);
     const colname = db.collection(collectionName);
     try {
-      // console.log(data);
       let res = await colname.findOne({
         email: data.email,
       });

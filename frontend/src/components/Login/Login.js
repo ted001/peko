@@ -1,8 +1,16 @@
+//Akhila
+//Did not use proptypes as it was not required
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import url from "../../images/logincss-bg.png";
+import urlhome from "../../images/home.png";
+import urlrest from "../../images/rest.png";
+
 import "./Login.css";
+
+/**
+ * Login component, checks if the username and password is correct
+ */
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -35,7 +43,7 @@ export default function Login() {
     }
   };
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       <form style={{ width: "23rem" }} onSubmit={handlelogin}>
         <h3 className="fw-normal mb-3 pb-3" style={{ letterspacing: "1px" }}>
           Log in
@@ -79,14 +87,16 @@ export default function Login() {
 
         <p>
           Don't have an account?{" "}
-          <a href="/register" className="link-info">
+          <a href="/register" className="link-success">
             Register here
           </a>
         </p>
       </form>
-      <img src={url} alt="animation image" id="bike" />
+      <div className="imagesbh">
+        <img src={urlrest} alt="animation image" className="rest" />
+        <img src={url} alt="animation image" id="bike" />
+        <img src={urlhome} alt="animation image" className="home" />
+      </div>
     </div>
   );
 }
-
-// Login.prototypes = {};

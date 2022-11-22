@@ -1,29 +1,20 @@
+// Complete file by Akhila
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import "./Navbar.css";
 import Signout from "../Signout/Signout";
 import Currentuser from "../Currentuser/Currentuser";
-// import Userhub from "../../pages/Userhub.js";
 import { useNavigate } from "react-router-dom";
+
+/**
+ * This function is used to build navbar to navigate around the site
+ */
 export default function Navbar({ render }) {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
-  //   async function getCurrentUser() {
-  //     let res = await fetch("/users/getCurrentUser");
-  //     console.log("In getcurrentuser", await res.user?.FirstName);
-  //     let fuser = await res.json().user?.FirstName;
-  //     return fuser;
-  //   }
-
-  //   useEffect(async () => {
-  //     setUser(await getCurrentUser());
-  //     console.log("user in effect", user);
-  //   }, []);
 
   useEffect(() => {
     async function getCurrentUser() {
       let res = await fetch("/users/fetchUpdatedUser");
-      //   console.log("In getcurrentuser", await res.json().user?.FirstName);
       let resuser = await res.json();
       console.log("resuser", resuser);
       let fname = resuser.user?.FirstName;

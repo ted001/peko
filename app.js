@@ -15,11 +15,10 @@ import userRouter from "./routes/users.js";
 const app = express();
 
 app.use(logger("dev"));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "frontend/build")));
 
+//Akhila
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(

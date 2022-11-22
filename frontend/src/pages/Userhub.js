@@ -1,3 +1,4 @@
+// Complete file by Akhila
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -51,8 +52,13 @@ export default function Userhub() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-    // console.log(res);
     setRender(fname + lname);
+    let succ = await res.json();
+    if (succ.updated) {
+      alert("Update successful");
+    } else {
+      alert("Sorry, error in updating");
+    }
   };
 
   const handleDelete = async (e) => {
@@ -80,7 +86,7 @@ export default function Userhub() {
       <Navbar render={render} />
       <div>
         <section className="container">
-          <h3>Please update your information</h3>
+          <h3 style={{ paddingtop: "20px" }}>Please update your information</h3>
           <form onSubmit={handleUpdate}>
             <div className="row">
               <div className="col-md-6 mb-4">
@@ -135,7 +141,7 @@ export default function Userhub() {
                 }}
               />
               <label className="form-label" htmlFor="form3Example4">
-                New password:
+                New password
               </label>
             </div>
             <div className="form-outline mb-4">
@@ -149,7 +155,7 @@ export default function Userhub() {
                 }}
               />
               <label className="form-label" htmlFor="form3Example4">
-                Address:
+                Address
               </label>
             </div>
             <div className="form-outline mb-4">
@@ -163,7 +169,7 @@ export default function Userhub() {
                 }}
               />
               <label className="form-label" htmlFor="form3Example4">
-                Phone no:
+                Phone no
               </label>
             </div>
             <div className="buttondiv">
@@ -175,7 +181,7 @@ export default function Userhub() {
           <button
             type="submit"
             onClick={handleDelete}
-            className="btn btn-primary btn-block mb-4"
+            className="btn btn-danger btn-block mb-4"
           >
             Delete account
           </button>
