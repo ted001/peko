@@ -1,3 +1,4 @@
+//Akhila
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -82,6 +83,8 @@ export default function SignUp() {
           <label className="form-label" htmlFor="form3Example3">
             Email address
           </label>
+          <br></br>
+          <small>We pinky promise to not share your email</small>
         </div>
 
         <div className="form-outline mb-4">
