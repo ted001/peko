@@ -126,7 +126,6 @@ export default function Meals() {
       {dishes.length !== 0 ? (
         <List dishes={dishes} updateCheckedItems={updateCheckedItems} />
       ) : null}
-      {/* <List dishes={dishes} /> */}
       <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
     </div>
   );

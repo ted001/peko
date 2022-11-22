@@ -93,9 +93,9 @@ export default function Login() {
         </p>
       </form>
       <div className="imagesbh">
-        <img src={urlrest} alt="animation image" className="rest" />
-        <img src={url} alt="animation image" id="bike" />
-        <img src={urlhome} alt="animation image" className="home" />
+        <img src={urlrest} alt="animation rest" className="rest" />
+        <img src={url} alt="animation bike" id="bike" />
+        <img src={urlhome} alt="animation home" className="home" />
       </div>
     </div>
   );

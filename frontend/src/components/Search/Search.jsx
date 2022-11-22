@@ -117,11 +117,6 @@ export default function Search(props) {
           className="form-control"
           placeholder="Eg: 10"
         ></input>
-        {/* <div className="d-flex ajustify-content-center ">
-          <input style={{ width: "60px" }} type="text" className="form-control" placeholder="min"></input>
-          <input type="range" id="budgetRange"></input>
-          <input style={{ width: "60px" }} type="text" className="form-control" placeholder="max"></input>
-        </div> */}
       </div>
       <div className="col-lg-2 col-md-1 ">
         <div className="d-flex justify-content-center ">

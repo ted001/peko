@@ -20,7 +20,6 @@ export default function Userhub() {
       let firname = resuser.user?.FirstName;
       let lasname = resuser.user?.LastName;
       let umail = resuser.user?.email;
-      let passwe = resuser.user?.password;
       let addr = resuser.user?.Address;
       let phn = resuser.user?.Phoneno;
       setFname(firname);

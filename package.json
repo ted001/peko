@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
-    "initdb": "mongoimport -d quick-food-ordering-db -c dishes --jsonArray --file ./data/dishes.json",
-    "postinstall": "cd front && npm install && npm run build"
+    "initdb": "mongoimport -d quick-food-ordering-db -c dishes --jsonArray --file ./data/dishes.json"
   },
   "engines": {
     "node": "16.17.1"

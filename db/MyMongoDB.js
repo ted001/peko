@@ -7,6 +7,7 @@ function MyMongoDB() {
   const url = process.env.DB_URL || "mongodb://localhost:27017";
   const DB_NAME = "quick-food-ordering-db";
 
+  //Jin: Get collections from DB
   myDB.read = async (collectionName, query) => {
     let client;
 
@@ -33,7 +34,7 @@ function MyMongoDB() {
     const db = connection.db(DB_NAME);
     const colname = db.collection(collectionName);
     try {
-      let res = await colname.insertOne({
+      await colname.insertOne({
         FirstName: data.fname,
         LastName: data.lname,
         email: data.email,
@@ -135,7 +136,7 @@ function MyMongoDB() {
     try {
       console.log(data);
       if (data.password) {
-        let res = await colname.updateOne(
+        await colname.updateOne(
           { email: data.email },
           {
             $set: {
@@ -149,7 +150,7 @@ function MyMongoDB() {
         );
         return true;
       } else {
-        let res = await colname.updateOne(
+        await colname.updateOne(
           { email: data.email },
           {
             $set: {
