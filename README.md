@@ -39,3 +39,6 @@ Akhila Sulgante 60% release tag: Includes registration and login(frontend and ba
 
 ## Website at a glimpse
 ![Login page](https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Screenshot%202022-11-22%20at%2012.06.19.png)
+![Register page](https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Screenshot%202022-11-22%20at%2012.06.28.png)
+![Menu page](https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Screenshot%202022-11-22%20at%2012.06.47.png)
+![Userhub page](https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Screenshot%202022-11-22%20at%2012.07.04.png)
