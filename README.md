@@ -13,6 +13,8 @@ Please refer the links below for more details on the design
 
 Authors: Zhiyi Jin and Akhila Sulgante
 
+## Submitted on **22nd Nov** following the end of day deadline for extra points
+
 ## Instruction to build:
 
 - Download this project as zip file or clone to your own gits
