@@ -7,9 +7,9 @@ The objective was to build a Full-stack(MERN) food-delivery application that dem
 Peko is a food delivery website that provides users with the options of filters on type, taste and budget of the dishes.
 
 Please refer the links below for more details on the design
-[Website link](https://peco.onrender.com)
-[design document](https://docs.google.com/document/d/1jzWYi_rLIvOwMelJkPmKe2k9Y0Ybm0Ga6NWGsU6-QGE/edit)
-[Video demo](https://www.youtube.com/watch?v=tOs2vFTsRKQ)
+[Website link](https://peco.onrender.com) ,
+[design document](https://docs.google.com/document/d/1jzWYi_rLIvOwMelJkPmKe2k9Y0Ybm0Ga6NWGsU6-QGE/edit) ,
+[Video demo](https://www.youtube.com/watch?v=tOs2vFTsRKQ) ,
 [Presentation deck](https://docs.google.com/presentation/d/1zDXrE-026RhZmQj-rGohoPSdSbZRC6I9znmc4vsmnUs/edit#slide=id.g1955c7bca40_0_330)
 
 Authors: Zhiyi Jin and Akhila Sulgante
