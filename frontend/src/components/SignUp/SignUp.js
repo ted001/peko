@@ -22,7 +22,6 @@ export default function SignUp() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-    // console.log(await res.json(), res);
     let response = await res.json();
     if (response.userexists) {
       alert("User already exists, please log in to continue");
@@ -109,3 +108,5 @@ export default function SignUp() {
     </div>
   );
 }
+
+SignUp.propTypes = {};

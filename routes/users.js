@@ -10,12 +10,13 @@ const router = express.Router();
 const strategy = new LocalStrategy(
   { usernameField: "email", passwordField: "password" },
   async function verify(email, password, cb) {
-    console.log("verify", email);
+    console.log("verify", email, "Password", password);
     let data = { email, password };
-    let user = await databaseManager.authuser("users", data);
-    let match = await bcrypt.compare(password, user.password);
+    let user, match;
     try {
       let checkuser = await databaseManager.finduser("users", email);
+      let user = await databaseManager.authuser("users", data);
+      let match = await bcrypt.compare(data.password, user.password);
       if (checkuser) {
         if (match) {
           return cb(null, user);

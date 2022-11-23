@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
+
 export default function Userhub() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -189,3 +190,5 @@ export default function Userhub() {
     </div>
   );
 }
+
+Userhub.propTypes = {};

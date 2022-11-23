@@ -36,3 +36,5 @@ export default function Register() {
     </div>
   );
 }
+
+Register.propTypes = {};

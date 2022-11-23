@@ -101,6 +101,7 @@ function MyMongoDB() {
       let res = await colname.findOne({
         email: data.email,
       });
+      console.log("in auth", res);
 
       return res;
     } catch (e) {

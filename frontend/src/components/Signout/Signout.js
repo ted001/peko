@@ -2,6 +2,7 @@
 import React from "react";
 import "./Signout.css";
 import { useNavigate } from "react-router-dom";
+
 export default function Signout() {
   const navigate = useNavigate();
   const handleSignout = async (e) => {
@@ -24,3 +25,5 @@ export default function Signout() {
     </div>
   );
 }
+
+Signout.propTypes = {};

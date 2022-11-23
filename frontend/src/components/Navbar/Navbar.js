@@ -60,3 +60,5 @@ export default function Navbar({ render }) {
     </div>
   );
 }
+
+Navbar.propTypes = {};

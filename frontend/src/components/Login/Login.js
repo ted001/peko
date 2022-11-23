@@ -23,7 +23,6 @@ export default function Login() {
       password,
     };
 
-    // console.log("in handlelogin", data);
     const res = await fetch("/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -31,15 +30,15 @@ export default function Login() {
     });
 
     let response = await res.json();
-    console.log(response);
+    console.log("If user existss", response.userexists);
     if (response.userexists && response.success) {
       console.log("success and user exists");
       navigate("/meals");
-    } else if (!response.success && !response.userexists) {
-      alert("username or password do not match");
-    } else {
+    } else if (!response.userexists) {
       alert("You seem new, please register");
       navigate("/register");
+    } else {
+      alert("username or password do not match");
     }
   };
   return (
@@ -100,3 +99,5 @@ export default function Login() {
     </div>
   );
 }
+
+Login.propTypes = {};
