@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 import Meals from "./pages/Meals";
 import OrderNow from "./pages/OrderNow";
@@ -12,7 +16,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   //Akhila
   {
     path: "/",
