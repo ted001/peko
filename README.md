@@ -15,7 +15,7 @@ Please refer the links below for more details on the design
 Authors: Zhiyi Jin and Akhila Sulgante
 
 ## Submitted on **22nd Nov** following the end of day deadline for extra points
-Here's the release tag before iterarting [release tage](https://github.com/Akhilasulgante/peko/releases/tag/project3_release)
+Here's the release tag before iterarting [release tag](https://github.com/Akhilasulgante/peko/releases/tag/project3_release)
 
 ## Instruction to build:
 
