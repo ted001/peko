@@ -100,22 +100,13 @@ export default function Meals() {
 
   if (loading) {
     return (
-      <main>
-        <Loading />
-      </main>
-    );
-  }
-
-  if (dishes.length === 0) {
-    return (
-      <main>
-        <div className="title">
-          <h2>No Meals Available Now</h2>
-          <button className="btn btn-primary" onClick={() => getAllMeals()}>
-            refresh
-          </button>
-        </div>
-      </main>
+      <div>
+        <Navbar />
+        <Search updateSearchResult={updateSearchResult} />
+        <main>
+          <Loading />
+        </main>
+      </div>
     );
   }
 
@@ -125,7 +116,14 @@ export default function Meals() {
       <Search updateSearchResult={updateSearchResult} />
       {dishes.length !== 0 ? (
         <List dishes={dishes} updateCheckedItems={updateCheckedItems} />
-      ) : null}
+      ) : (
+        <div>
+          <h2>Sorry! No result found!</h2>
+          <h3>
+            We're sorry what you were looking for. Please try another way.
+          </h3>
+        </div>
+      )}
       <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
     </div>
   );
