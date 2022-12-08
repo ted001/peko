@@ -7,8 +7,8 @@ function MyMongoDB() {
   const url = process.env.DB_URL || "mongodb://localhost:27017";
   const DB_NAME = "quick-food-ordering-db";
 
-  //Jin: Get collections from DB
-  myDB.read = async (collectionName, query) => {
+  //Jin: Meals functionality
+  myDB.readMeals = async (collectionName, query) => {
     let client;
 
     try {

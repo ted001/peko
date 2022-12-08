@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/api/getAllMeals", async (req, res) => {
   let data;
   try {
-    data = await databaseManager.read("dishes", {});
+    data = await databaseManager.readMeals("meals", {});
   } catch (err) {
     console.log("err", err);
   }
@@ -22,7 +22,7 @@ router.post("/api/filterMeals", async (req, res) => {
   console.log(req.body.price);
   let data;
   try {
-    data = await databaseManager.read("dishes", {
+    data = await databaseManager.readMeals("meals", {
       price: { $lt: parseInt(req.body.price) },
       type: req.body.type,
       taste: req.body.taste,
@@ -32,5 +32,8 @@ router.post("/api/filterMeals", async (req, res) => {
   }
   res.json(data);
 });
+
+
+
 
 export default router;
