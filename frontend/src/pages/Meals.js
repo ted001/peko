@@ -5,6 +5,8 @@ import List from "../components/List/List";
 import Footer from "../components/Footer/Footer";
 import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Navbar/Navbar";
+import Pagination from "../components/Pagination/Pagination";
+
 export default function Meals() {
   console.log("Meals page");
 
@@ -12,28 +14,42 @@ export default function Meals() {
   let [dishes, setDishes] = useState([]);
   let [totalPrice, setTotalPrice] = useState(0);
   let [checkedItems, setCheckedItems] = useState(0);
+  let [page, setPage] = useState(1);
+  const PAGE_SIZE = 20;
+  let [pageNumbers, setPageNumbers] = useState([]);
 
   let updateSearchResult = (dishes) => {
+    setPageNumbers(updatePageNumbers(dishes.length));
     setDishes(dishes);
+    console.log("setPageNumbers: ", pageNumbers);
+    setPage(1);
     setTotalPrice(0);
     setCheckedItems(0);
   };
 
-  async function getAllMeals() {
-    console.log("getAllMeals");
-    setLoading(true);
-    try {
-      const status = await fetch("/api/getAllMeals");
-      let dishes = await status.json();
-      setLoading(false);
-      setDishes(dishes);
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
+  function updatePageNumbers(totalDishes) {
+    let pageNumbers = [];
+    for (let i = 0; i < Math.ceil(totalDishes / PAGE_SIZE); i++) {
+      pageNumbers.push(i);
     }
+    return pageNumbers;
   }
 
   useEffect(() => {
+    async function getAllMeals() {
+      console.log("getAllMeals");
+      setLoading(true);
+      try {
+        const status = await fetch("/api/getAllMeals");
+        let dishes = await status.json();
+        setLoading(false);
+        setPageNumbers(updatePageNumbers(dishes.length));
+        setDishes(dishes);
+      } catch (error) {
+        setLoading(false);
+        console.log(error);
+      }
+    }
     getAllMeals();
   }, []);
 
@@ -114,8 +130,12 @@ export default function Meals() {
     <div>
       <Navbar />
       <Search updateSearchResult={updateSearchResult} />
+
       {dishes.length !== 0 ? (
-        <List dishes={dishes} updateCheckedItems={updateCheckedItems} />
+        <List
+          dishes={dishes.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)}
+          updateCheckedItems={updateCheckedItems}
+        />
       ) : (
         <div>
           <h2>Sorry! No result found!</h2>
@@ -124,6 +144,14 @@ export default function Meals() {
           </h3>
         </div>
       )}
+
+      <Pagination
+        page={page}
+        setPage={setPage}
+        totalDishes={dishes.length}
+        pageNumbers={pageNumbers}
+      />
+
       <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
     </div>
   );
