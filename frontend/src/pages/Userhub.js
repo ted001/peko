@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { useNavigate } from "react-router-dom";
-
+import Mainfooter from "../components/foot/Mainfooter";
 export default function Userhub() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -187,6 +187,7 @@ export default function Userhub() {
           </button>
         </section>
       </div>
+      <Mainfooter />
     </div>
   );
 }

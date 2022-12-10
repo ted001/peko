@@ -39,7 +39,6 @@ export default function Navbar({ render }) {
                 <Currentuser user={user} />
               </li>
               <li className="nav-item">
-                {/* <a className="nav-link" href="/userhub"> */}
                 <button
                   className="usebutton"
                   onClick={() => {
@@ -48,8 +47,45 @@ export default function Navbar({ render }) {
                 >
                   Userhub
                 </button>
-                {/* </a> */}
               </li>
+              {/* <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Dropdown link
+                </a>
+                <div
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                > */}
+              {/* <a className="dropdown-item" href="#">
+                    Action
+                  </a>
+                  <a className="dropdown-item" href="#">
+                    Another action
+                  </a>
+                  <a className="dropdown-item" href="#">
+                    Something else here
+                  </a> */}
+              {/* <option>a</option>
+                  <option>b</option>
+                </div>
+              </li> */}
+
+              <div
+                style={true ? { display: "block" } : { display: "none" }}
+                className={"collapse navbar-collapse"}
+              >
+                <div className="dropdown-item" href="#">
+                  Another action
+                </div>
+              </div>
+
               <li className="nav-item">
                 <Signout />
               </li>
