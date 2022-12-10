@@ -18,7 +18,19 @@ export default function Meals() {
   const PAGE_SIZE = 20;
   let [pageNumbers, setPageNumbers] = useState([]);
 
-  let updateSearchResult = (dishes) => {
+  let [checkedFoodCategories, setCheckedFoodCategories] = useState([]);
+  let [checkedFoodTaste, setCheckedFoodTaste] = useState([]);
+  let [checkedFoodPriceRange, setCheckedFoodPriceRange] = useState([]);
+
+  let updateSearchResult = (
+    dishes,
+    foodCategories,
+    foodTaste,
+    foodPriceRange
+  ) => {
+    setCheckedFoodCategories(foodCategories);
+    setCheckedFoodTaste(foodTaste);
+    setCheckedFoodPriceRange(foodPriceRange);
     setPageNumbers(updatePageNumbers(dishes.length));
     setDishes(dishes);
     console.log("setPageNumbers: ", pageNumbers);
@@ -118,10 +130,21 @@ export default function Meals() {
     return (
       <div>
         <Navbar />
-        <Search updateSearchResult={updateSearchResult} />
-        <main>
-          <Loading />
-        </main>
+        <div className="row">
+          <div className="col-lg-3 col-md-2">
+            <Search
+              checkedFoodCategories={checkedFoodCategories}
+              checkedFoodTaste={checkedFoodTaste}
+              checkedFoodPriceRange={checkedFoodPriceRange}
+              updateSearchResult={updateSearchResult}
+            />
+          </div>
+          <div className="col-lg-9 col-md-10">
+            <main>
+              <Loading />
+            </main>
+          </div>
+        </div>
       </div>
     );
   }
@@ -129,28 +152,37 @@ export default function Meals() {
   return (
     <div>
       <Navbar />
-      <Search updateSearchResult={updateSearchResult} />
-
-      {dishes.length !== 0 ? (
-        <List
-          dishes={dishes.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)}
-          updateCheckedItems={updateCheckedItems}
-        />
-      ) : (
-        <div>
-          <h2>Sorry! No result found!</h2>
-          <h3>
-            We're sorry what you were looking for. Please try another way.
-          </h3>
+      <div className="row">
+        <div className="col-lg-3 col-md-2">
+          <Search
+            checkedFoodCategories={checkedFoodCategories}
+            checkedFoodTaste={checkedFoodTaste}
+            checkedFoodPriceRange={checkedFoodPriceRange}
+            updateSearchResult={updateSearchResult}
+          />
         </div>
-      )}
-
-      <Pagination
-        page={page}
-        setPage={setPage}
-        totalDishes={dishes.length}
-        pageNumbers={pageNumbers}
-      />
+        <div className="col-lg-9 col-md-10">
+          {dishes.length !== 0 ? (
+            <List
+              dishes={dishes.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)}
+              updateCheckedItems={updateCheckedItems}
+            />
+          ) : (
+            <div>
+              <h2>Sorry! No result found!</h2>
+              <h3>
+                We're sorry what you were looking for. Please try another way.
+              </h3>
+            </div>
+          )}
+          <Pagination
+            page={page}
+            setPage={setPage}
+            totalDishes={dishes.length}
+            pageNumbers={pageNumbers}
+          />
+        </div>
+      </div>
 
       <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
     </div>

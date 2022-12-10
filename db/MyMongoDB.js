@@ -19,7 +19,6 @@ function MyMongoDB() {
       const db = client.db(DB_NAME);
       const collection = db.collection(collectionName);
       let res = await collection.find(query).toArray();
-      console.log("read dishes", res);
       return res;
     } finally {
       console.log("Closing the connection");
