@@ -9,7 +9,7 @@ export default function Footer(props) {
   const { checkedDishes, checkedItems, totalPrice } = props;
 
   let onOrderNowHandler = () => {
-    navigate("/orderNow");
+    navigate("/orderNow", { state: { checkedDishes } });
   };
 
   return (

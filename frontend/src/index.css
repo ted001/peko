@@ -17,3 +17,11 @@ body {
 .text-center {
   text-align: center;
 }
+
+.order-title {
+  margin-top: 50px;
+}
+
+.order-table {
+  margin-top: 20px;
+}
