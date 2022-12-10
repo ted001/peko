@@ -1,12 +1,13 @@
 //Akhila
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function SignUp() {
   const [fname, setFname] = useState();
   const [lname, setLname] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [confPassword, setConfPassword] = useState();
   const navigate = useNavigate();
   const handlesubmit = async (e) => {
     e.preventDefault();
@@ -16,18 +17,23 @@ export default function SignUp() {
       email,
       password,
     };
-    console.log("in signup", data);
-    const res = await fetch("/users/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    let response = await res.json();
-    if (response.userexists) {
-      alert("User already exists, please log in to continue");
-      navigate("/");
+    if (password === confPassword) {
+      console.log("in signup", data);
+      const res = await fetch("/users/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      let response = await res.json();
+      if (response.userexists) {
+        alert("User already exists, please log in to continue");
+        navigate("/");
+      } else {
+        alert("Account created successfully, please log in to continue");
+        navigate("/");
+      }
     } else {
-      navigate("/");
+      alert("Passwords don't match");
     }
   };
 
@@ -101,9 +107,34 @@ export default function SignUp() {
           </label>
         </div>
 
+        <div className="form-outline mb-4">
+          <input
+            type="Password"
+            id="form3Example4"
+            className="form-control"
+            onChange={(e) => {
+              setConfPassword(e.target.value);
+            }}
+            required
+          />
+          <label className="form-label" htmlFor="form3Example4">
+            Confirm Password
+            <br></br>
+            {password != confPassword ? (
+              <div style={{ color: "red" }}>password not matched </div>
+            ) : (
+              ""
+            )}
+          </label>
+        </div>
+
         <button type="submit" className="btn btn-primary btn-block mb-4">
           Sign up
         </button>
+
+        <p>
+          Already have an account? <Link to="/">Login here</Link>
+        </p>
       </form>
     </div>
   );
