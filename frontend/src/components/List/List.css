@@ -1,0 +1,15 @@
+.dish-type,
+.dish-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.dish-price {
+  font-size: 1.25rem;
+}
+
+.dish-desc {
+  font-size: 1rem;
+  color: #545563;
+
+}

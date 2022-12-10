@@ -1,6 +1,7 @@
 // Zhiyi Jin
 import React from "react";
 import PropTypes from "prop-types";
+import "./List.css";
 
 export default function List(props) {
   const { dishes } = props;
@@ -19,29 +20,36 @@ export default function List(props) {
       {dishes.map((dish) => {
         return (
           <label key={dish.key} className="list-group-item d-flex gap-3">
-            <img
-              src={dish.image}
-              alt="twbs"
-              width="100"
-              height="100"
-              className="float-start rounded-circle"
-            />
-            <div className="d-flex gap-2 w-100 justify-content-between">
+            <div d-flex align-items-center>
+              <img
+                src={dish.image}
+                alt="twbs"
+                width="100"
+                height="100"
+                className="float-start rounded-circle "
+              />
+            </div>
+
+            <div className="dish-item d-flex w-100 align-items-center">
               <div>
-                <label className="mb-1 me-2">{dish.type}</label>
-                <span className="mb-1">{dish.dish_name}</span>
-                <h6 className="mb-1">${dish.price}</h6>
-                <p className="mb-1">{dish.desciption}</p>
+                <label className="dish-type mb-1 me-2">{dish.type}</label>
+                <span className="dish-name mb-1">{dish.dish_name}</span>
+                <p className="dish-desc mb-1">{dish.desciption}</p>
               </div>
             </div>
-            <input
-              checked={dish.checked}
-              className="form-check-input flex-shrink-0"
-              onChange={handleChecked(dish)}
-              type="checkbox"
-              value=""
-              style={{ fontSize: " 1.375em" }}
-            />
+            <div className="dish-item d-flex flex-wrap align-self-center">
+              <strong className="dish-price mb-1">${dish.price}</strong>
+            </div>
+            <div className="d-flex ms-auto p-2 align-self-center">
+              <input
+                checked={dish.checked}
+                className="form-check-input flex-shrink-0"
+                onChange={handleChecked(dish)}
+                type="checkbox"
+                value=""
+                style={{ fontSize: " 1.375em" }}
+              />
+            </div>
           </label>
         );
       })}
