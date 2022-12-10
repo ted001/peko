@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 import url from "../../images/logincss-bg.png";
 import urlhome from "../../images/home.png";
 import urlrest from "../../images/rest.png";
+import footer from "../foot/Mainfooter.js";
 
 import "./Login.css";
 
@@ -79,16 +80,13 @@ export default function Login() {
         </div>
 
         <div className="pt-1 mb-4">
-          <button className="btn btn-info btn-lg btn-block" type="submit">
+          <button className="btn btn-primary btn-lg btn-block" type="submit">
             Login
           </button>
         </div>
 
         <p>
-          Don't have an account?{" "}
-          <Link to="/register" className="link-success">
-            Register here
-          </Link>
+          Don't have an account? <Link to="/register">Register here</Link>
         </p>
       </form>
       <div className="imagesbh">
