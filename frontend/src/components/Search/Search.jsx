@@ -149,7 +149,7 @@ export default function Search(props) {
                 type="checkbox"
                 className="btn-check"
                 id={type}
-                autocomplete="off"
+                autoComplete="off"
                 onChange={(event) => {
                   updateCheckedFoodCategories(event);
                 }}
@@ -180,7 +180,7 @@ export default function Search(props) {
               />
               <label
                 className="btn btn-outline-dark filter-option-btn"
-                for={taste}>
+                htmlFor={taste}>
                 {taste}
               </label>
             </span>
@@ -200,7 +200,9 @@ export default function Search(props) {
             updateCheckedFoodPrice(event);
           }}
         />
-        <label className="btn btn-outline-dark filter-option-btn" for="price1">
+        <label
+          className="btn btn-outline-dark filter-option-btn"
+          htmlFor="price1">
           $
         </label>
         <input
@@ -213,7 +215,9 @@ export default function Search(props) {
             updateCheckedFoodPrice(event);
           }}
         />
-        <label className="btn btn-outline-dark filter-option-btn" for="price2">
+        <label
+          className="btn btn-outline-dark filter-option-btn"
+          htmlFor="price2">
           $$
         </label>
         <input
@@ -226,7 +230,9 @@ export default function Search(props) {
             updateCheckedFoodPrice(event);
           }}
         />
-        <label className="btn btn-outline-dark filter-option-btn" for="price3">
+        <label
+          className="btn btn-outline-dark filter-option-btn"
+          htmlFor="price3">
           $$$
         </label>
       </div>

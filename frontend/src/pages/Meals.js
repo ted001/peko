@@ -22,6 +22,8 @@ export default function Meals() {
   let [checkedFoodTaste, setCheckedFoodTaste] = useState([]);
   let [checkedFoodPriceRange, setCheckedFoodPriceRange] = useState([]);
 
+  let [checkedDishes, setCheckedDishes] = useState([]);
+
   let updateSearchResult = (
     dishes,
     foodCategories,
@@ -37,6 +39,7 @@ export default function Meals() {
     setPage(1);
     setTotalPrice(0);
     setCheckedItems(0);
+    setCheckedDishes([]);
   };
 
   function updatePageNumbers(totalDishes) {
@@ -117,13 +120,21 @@ export default function Meals() {
   }
 
   let updateCheckedItems = (dish, checked) => {
+    console.log("updateCheckedItems: ", dish, checked);
     if (checked) {
+      setCheckedDishes([...checkedDishes, dish]);
       setTotalPrice(Number(accAdd(totalPrice, dish.price)));
       setCheckedItems(Number(accAdd(checkedItems, 1)));
     } else {
+      let tmpCheckedDishes = [...checkedDishes];
+      tmpCheckedDishes = tmpCheckedDishes.filter((element) => {
+        return element.key !== dish.key;
+      });
+      setCheckedDishes(tmpCheckedDishes);
       setTotalPrice(Number(accSub(totalPrice, dish.price)));
       setCheckedItems(Number(accSub(checkedItems, 1)));
     }
+    console.log("checkedDishes: ", checkedDishes);
   };
 
   if (loading) {
@@ -184,7 +195,11 @@ export default function Meals() {
         </div>
       </div>
 
-      <Footer checkedItems={checkedItems} totalPrice={totalPrice} />
+      <Footer
+        checkedDishes={checkedDishes}
+        checkedItems={checkedItems}
+        totalPrice={totalPrice}
+      />
     </div>
   );
 }
