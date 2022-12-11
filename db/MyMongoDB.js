@@ -4,7 +4,7 @@ dotenv.config();
 
 function MyMongoDB() {
   const myDB = {};
-  const url = DB_URL;
+  const url = process.env.DB_URL || "mongodb://localhost:27017";
   const DB_NAME = "quick-food-ordering-db";
 
   //Jin: Get collections from DB

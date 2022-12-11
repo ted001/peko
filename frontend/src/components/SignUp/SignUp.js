@@ -109,17 +109,17 @@ export default function SignUp() {
 
         <div className="form-outline mb-4">
           <input
-            type="Password"
-            id="form3Example4"
+            type="password"
+            id="form3Example5"
             className="form-control"
             onChange={(e) => {
               setConfPassword(e.target.value);
             }}
             required
           />
-          <label className="form-label" htmlFor="form3Example4">
+          <label className="form-label" htmlFor="form3Example5">
             Confirm Password
-            <br></br>
+            <br />
             {password != confPassword ? (
               <div style={{ color: "red" }}>password not matched </div>
             ) : (

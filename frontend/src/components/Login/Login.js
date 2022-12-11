@@ -45,9 +45,9 @@ export default function Login() {
   return (
     <div style={{ display: "flex" }}>
       <form style={{ width: "23rem" }} onSubmit={handlelogin}>
-        <h3 className="fw-normal mb-3 pb-3" style={{ letterspacing: "1px" }}>
+        <h2 className="fw-normal mb-3 pb-3" style={{ letterspacing: "1px" }}>
           Log in
-        </h3>
+        </h2>
 
         <div className="form-outline mb-4">
           <input
