@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import "./Currentuser.css";
 
 export default function Currentuser({ user }) {
-  return <button className="userbutton">{user}</button>;
+  return <p className="userbutton">{user}</p>;
 }
 
 Currentuser.propTypes = {
