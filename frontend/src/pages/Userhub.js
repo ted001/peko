@@ -142,6 +142,10 @@ export default function Userhub() {
                 New password
               </label>
             </div>
+            <hr />
+            <label>
+              This information is collected only for delivery purposes
+            </label>
             <div className="form-outline mb-4">
               <input
                 type="text"
