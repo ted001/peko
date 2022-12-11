@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Navbar/Navbar";
 import Pagination from "../components/Pagination/Pagination";
+import Mainfooter from "../components/foot/Mainfooter";
 
 export default function Meals() {
   console.log("Meals page");
@@ -151,8 +152,34 @@ export default function Meals() {
             />
           </div>
           <div className="col-lg-9 col-md-10">
-            <main>
+            <main className="text-center align-middle mt-5">
               <Loading />
+            </main>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (dishes.length === 0) {
+    return (
+      <div>
+        <Navbar />
+        <div className="row">
+          <div className="col-lg-3 col-md-2">
+            <Search
+              checkedFoodCategories={checkedFoodCategories}
+              checkedFoodTaste={checkedFoodTaste}
+              checkedFoodPriceRange={checkedFoodPriceRange}
+              updateSearchResult={updateSearchResult}
+            />
+          </div>
+          <div className="col-lg-9 col-md-10">
+            <main className="text-center align-middle mt-5">
+              <h2>Sorry! No result found!</h2>
+              <h3>
+                We're sorry what you were looking for. Please try another way.
+              </h3>
             </main>
           </div>
         </div>
@@ -173,33 +200,25 @@ export default function Meals() {
           />
         </div>
         <div className="col-lg-9 col-md-10">
-          {dishes.length !== 0 ? (
-            <List
-              dishes={dishes.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)}
-              updateCheckedItems={updateCheckedItems}
-            />
-          ) : (
-            <div>
-              <h2>Sorry! No result found!</h2>
-              <h3>
-                We're sorry what you were looking for. Please try another way.
-              </h3>
-            </div>
-          )}
+          <List
+            dishes={dishes.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)}
+            updateCheckedItems={updateCheckedItems}
+          />
           <Pagination
             page={page}
             setPage={setPage}
             totalDishes={dishes.length}
             pageNumbers={pageNumbers}
           />
+          <Footer
+            checkedDishes={checkedDishes}
+            checkedItems={checkedItems}
+            totalPrice={totalPrice}
+          />
         </div>
       </div>
 
-      <Footer
-        checkedDishes={checkedDishes}
-        checkedItems={checkedItems}
-        totalPrice={totalPrice}
-      />
+      <Mainfooter />
     </div>
   );
 }

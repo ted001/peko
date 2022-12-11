@@ -2,6 +2,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
+import Mainfooter from "../components/foot/Mainfooter";
 import landbg from "../images/landbg.jpg";
 
 export default function OrderNow() {
@@ -65,7 +66,7 @@ export default function OrderNow() {
                   <th scope="row">{index + 1}</th>
                   <td>{checkedDish.dish_name}</td>
                   <td>1</td>
-                  <td>{checkedDish.price}</td>
+                  <td>$ {checkedDish.price}</td>
                 </tr>
               );
             })}
@@ -77,6 +78,7 @@ export default function OrderNow() {
           <div></div>
         </div>
       </main>
+      <Mainfooter />
     </div>
   );
 }

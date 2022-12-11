@@ -64,7 +64,7 @@ export default function Footer(props) {
                         <th scope="row">{index + 1}</th>
                         <td>{checkedDish.dish_name}</td>
                         <td>1</td>
-                        <td>{checkedDish.price}</td>
+                        <td>${checkedDish.price}</td>
                       </tr>
                     );
                   })}
