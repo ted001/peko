@@ -1,5 +1,5 @@
 // Zhiyi Jin
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Mainfooter from "../components/foot/Mainfooter";
@@ -8,7 +8,9 @@ import landbg from "../images/landbg.jpg";
 export default function OrderNow() {
   let location = useLocation();
   const { checkedDishes } = location.state;
-  console.log(checkedDishes);
+  const [user, setUser] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
 
   // Ref to: https://blog.csdn.net/m0_47415644/article/details/114368183
   // Generate a random OrderID
@@ -26,6 +28,23 @@ export default function OrderNow() {
     }
     return year + month + day + hour + minutes + seconds + num;
   }
+
+  useEffect(() => {
+    async function getCurrentUser() {
+      let res = await fetch("/users/fetchUpdatedUser");
+      let userInfo = await res.json();
+      console.log("userInfo", userInfo);
+      let firstName = userInfo.user?.FirstName;
+      let lastName = userInfo.user?.LastName;
+      let address = userInfo.user?.Address;
+      let phone = userInfo.user?.Phoneno;
+
+      setUser(firstName + " " + lastName);
+      setPhone(phone);
+      setAddress(address);
+    }
+    getCurrentUser();
+  }, []);
 
   return (
     <div>
@@ -75,7 +94,9 @@ export default function OrderNow() {
 
         <div>
           <div className="fs-4">Sent to:</div>
-          <div></div>
+          <div className="fs-5">{user}</div>
+          <div className="fs-5">{address}</div>
+          <div className="fs-5">{phone}</div>
         </div>
       </main>
       <Mainfooter />
