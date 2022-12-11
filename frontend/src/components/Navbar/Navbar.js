@@ -28,9 +28,11 @@ export default function Navbar({ render }) {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light gradient-custom">
         <div className="leftcontainer">
-          <Link className="navbar-brand" to="/meals">
-            Peko
-          </Link>
+          <h1>
+            <Link className="navbar-brand" to="/meals">
+              Peko
+            </Link>
+          </h1>
         </div>
         <div className="rightContainer">
           <div className="collapse navbar-collapse" id="navbarNav">
@@ -48,43 +50,6 @@ export default function Navbar({ render }) {
                   Userhub
                 </button>
               </li>
-              {/* <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Dropdown link
-                </a>
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                > */}
-              {/* <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a> */}
-              {/* <option>a</option>
-                  <option>b</option>
-                </div>
-              </li> */}
-
-              <div
-                style={true ? { display: "block" } : { display: "none" }}
-                className={"collapse navbar-collapse"}
-              >
-                <div className="dropdown-item" href="#">
-                  Another action
-                </div>
-              </div>
 
               <li className="nav-item">
                 <Signout />

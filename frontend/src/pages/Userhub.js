@@ -86,7 +86,7 @@ export default function Userhub() {
       <Navbar render={render} />
       <div>
         <section className="container">
-          <h3 style={{ paddingtop: "20px" }}>Please update your information</h3>
+          <h2 style={{ paddingtop: "20px" }}>Please update your information</h2>
           <form onSubmit={handleUpdate}>
             <div className="row">
               <div className="col-md-6 mb-4">
@@ -123,24 +123,22 @@ export default function Userhub() {
               </div>
             </div>
 
-            <div className="form-outline mb-4">
-              <label>{email}</label>
+            <div className="form-outline mb-4" id="useremsil">
+              <label htmlfor="useremsil">{email}</label>
               <br></br>
-              <label className="form-label" htmlFor="form3Example3">
-                Email address
-              </label>
+              <label className="form-label">Email address</label>
             </div>
 
             <div className="form-outline mb-4">
               <input
                 type="password"
-                id="form3Example4"
+                id="form3Example3"
                 className="form-control"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
               />
-              <label className="form-label" htmlFor="form3Example4">
+              <label className="form-label" htmlFor="form3Example3">
                 New password
               </label>
             </div>
@@ -161,14 +159,14 @@ export default function Userhub() {
             <div className="form-outline mb-4">
               <input
                 type="number"
-                id="form3Example4"
+                id="form3Example5"
                 className="form-control"
                 defaultValue={phone}
                 onChange={(e) => {
                   setPhone(e.target.value);
                 }}
               />
-              <label className="form-label" htmlFor="form3Example4">
+              <label className="form-label" htmlFor="form3Example5">
                 Phone no
               </label>
             </div>
