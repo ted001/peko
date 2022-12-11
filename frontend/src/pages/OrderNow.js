@@ -57,15 +57,22 @@ export default function OrderNow() {
           src={landbg}
           alt="food delivery"
         />
-        <h1>Thank you for your trust.</h1>
-        <h2>
+        <h1 className="order-success">
+          Order Success.Thank you for your trust.
+        </h1>
+        <h2 className="order-success-info">
           Your oder will be delivered in 15 minutes. Please keep your phone
-          connected.You will pay the bill when you received your food.
+          connected.
+        </h2>
+        <h2 className="order-success-info">
+          You will pay the bill when you received your food.
         </h2>
         <div className="order-title d-flex flex-row mb-3 justify-content-between">
-          <div className="fs-5">Order ID: {generateOrderNumber()}</div>
           <div className="fs-5">
-            Order Date: {new Date().toLocaleDateString()}
+            <strong>Order ID:</strong> {generateOrderNumber()}
+          </div>
+          <div className="fs-5">
+            <strong>Order Date:</strong> {new Date().toLocaleDateString()}
           </div>
         </div>
         <hr />
@@ -92,11 +99,11 @@ export default function OrderNow() {
           </tbody>
         </table>
 
-        <div>
-          <div className="fs-4">Sent to:</div>
-          <div className="fs-5">{user}</div>
-          <div className="fs-5">{address}</div>
-          <div className="fs-5">{phone}</div>
+        <div className="mt-5 mb-5">
+          <div className="fs-4 fw-bold">Sent to:</div>
+          <div className="fs-5">User: {user}</div>
+          <div className="fs-5">Address: {address}</div>
+          <div className="fs-5">Phone: {phone}</div>
         </div>
       </main>
       <Mainfooter />

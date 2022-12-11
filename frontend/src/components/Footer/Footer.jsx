@@ -1,5 +1,6 @@
 // Zhiyi Jin
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Modal } from "bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./Footer.css";
 import PropTypes from "prop-types";
@@ -7,10 +8,39 @@ import PropTypes from "prop-types";
 export default function Footer(props) {
   let navigate = useNavigate();
   const { checkedDishes, checkedItems, totalPrice } = props;
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
 
   let onOrderNowHandler = () => {
     navigate("/orderNow", { state: { checkedDishes } });
   };
+
+  let onHandleOrder = () => {
+    if (!address || !phone) {
+      let r = window.confirm("Please input your address and phone number first, Thank you!");
+      if (r === true) {
+        navigate("/Userhub");
+      } 
+    } else {
+      console.log("show dialog");
+      const myDialog = new Modal("#dialog");
+      myDialog.show();
+    }
+  };
+
+  useEffect(() => {
+    async function getCurrentUser() {
+      let res = await fetch("/users/fetchUpdatedUser");
+      let userInfo = await res.json();
+      
+      let address = userInfo.user?.Address;
+      let phone = userInfo.user?.Phoneno;
+
+      setPhone(phone);
+      setAddress(address);
+    }
+    getCurrentUser();
+  }, []);
 
   return (
     <div className="order-footer">
@@ -18,7 +48,7 @@ export default function Footer(props) {
         className="btn btn-primary btn-lg orderNow-btn"
         type="button"
         data-bs-toggle="modal"
-        data-bs-target="#dialog"
+        onClick={onHandleOrder}
         disabled={checkedDishes.length === 0 ? true : false}>
         Order Now
       </button>

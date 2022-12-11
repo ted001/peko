@@ -10,6 +10,10 @@ div {
   font-weight: 250;
 }
 
+* {
+  color: #272c2f;
+}
+
 .text-center {
   text-align: center;
 }
@@ -20,4 +24,8 @@ div {
 
 .order-table {
   margin-top: 20px;
+}
+
+.order-success {
+  color: #FE724c;
 }
