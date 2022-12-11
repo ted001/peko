@@ -6,10 +6,20 @@
 
 .dish-price {
   font-size: 1.25rem;
+  width: 100px;
+  margin-left: 60px;
 }
 
 .dish-desc {
   font-size: 1rem;
   color: #545563;
 
+}
+
+.dish-item {
+  width: 50%;
+}
+
+.checkbox.form-check-input {
+  margin-top: 0px;
 }

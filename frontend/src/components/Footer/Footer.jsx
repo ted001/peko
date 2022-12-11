@@ -15,31 +15,26 @@ export default function Footer(props) {
   return (
     <div className="order-footer">
       <button
-        className={
-          checkedDishes.length === 0
-            ? "btn btn-primary disabled orderNow"
-            : "btn btn-primary orderNow"
-        }
+        className="btn btn-primary btn-lg orderNow-btn"
         type="button"
-        onClick={() => {}}
         data-bs-toggle="modal"
-        data-bs-target="#dialog">
+        data-bs-target="#dialog"
+        disabled={checkedDishes.length === 0 ? true : false}>
         Order Now
       </button>
+
       <div
         className="modal fade"
         id="dialog"
         tabIndex="-1"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title fs-1" id="exampleModalLabel">
+              <h2 className="modal-title fs-2" id="exampleModalLabel">
                 Peco
-              </h5>
+              </h2>
               <button
                 type="button"
                 className="btn-close"
@@ -91,9 +86,13 @@ export default function Footer(props) {
         </div>
       </div>
 
-      <div className="checkedInfo">
-        <p className="lh-1 fs-6">{checkedItems} items selected</p>
-        <p className="lh-1 fs-6">Total Price: ${totalPrice}</p>
+      <div className="checkedInfo" role="contentinfo">
+        <p className="lh-1 fs-6 fw-bold text-center">
+          {checkedItems} items selected
+        </p>
+        <p className="lh-1 fs-6 fw-bold text-center">
+          Total Price: ${totalPrice}
+        </p>
       </div>
     </div>
   );

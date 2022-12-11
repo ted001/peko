@@ -1,7 +1,13 @@
-.filter-option-label {
+.filter-option-categories {
   font-size: 1.5rem;
   line-height: 40px;
-  margin-top: 25px;
+}
+
+.filter-option-price,
+.filter-option-taste {
+  font-size: 1.5rem;
+  line-height: 40px;
+  margin-top: 35px;
 }
 
 .filter-option-btn {

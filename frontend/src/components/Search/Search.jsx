@@ -139,9 +139,10 @@ export default function Search(props) {
   };
 
   return (
-    <div>
+    <aside className="mt-5">
       <div>
-        <div className="filter-option-label">Categories</div>
+        <h1 className="fs-2 mb-3">All Dishes</h1>
+        <div className="filter-option-categories">Categories</div>
         {foodTypes.map((type, index) => {
           return (
             <span key={`type_${index}`}>
@@ -164,7 +165,7 @@ export default function Search(props) {
         })}
       </div>
 
-      <div className="filter-option-label">
+      <div className="filter-option-taste">
         <div>Taste</div>
         {foodTastes.map((taste, index) => {
           return (
@@ -188,7 +189,7 @@ export default function Search(props) {
         })}
       </div>
 
-      <div className="filter-option-label">
+      <div className="filter-option-price">
         <div>Price</div>
         <input
           type="checkbox"
@@ -236,7 +237,7 @@ export default function Search(props) {
           $$$
         </label>
       </div>
-    </div>
+    </aside>
   );
 }
 

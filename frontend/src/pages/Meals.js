@@ -176,10 +176,10 @@ export default function Meals() {
           </div>
           <div className="col-lg-9 col-md-10">
             <main className="text-center align-middle mt-5">
-              <h2>Sorry! No result found!</h2>
-              <h3>
+              <h1>Sorry! No result found!</h1>
+              <h2>
                 We're sorry what you were looking for. Please try another way.
-              </h3>
+              </h2>
             </main>
           </div>
         </div>

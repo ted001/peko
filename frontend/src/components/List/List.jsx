@@ -16,7 +16,7 @@ export default function List(props) {
 
   console.log("list render", dishes.length);
   return (
-    <div className="list-group w-auto">
+    <main className="list-group w-auto mt-5">
       {dishes.map((dish) => {
         return (
           <label key={dish.key} className="list-group-item d-flex gap-3">
@@ -30,20 +30,20 @@ export default function List(props) {
               />
             </div>
 
-            <div className="dish-item d-flex w-100 align-items-center">
+            <div className="dish-item d-flex align-items-center">
               <div>
                 <label className="dish-type mb-1 me-2">{dish.type}</label>
                 <span className="dish-name mb-1">{dish.dish_name}</span>
                 <p className="dish-desc mb-1">{dish.desciption}</p>
               </div>
             </div>
-            <div className="dish-item d-flex flex-wrap align-self-center">
-              <strong className="dish-price mb-1">${dish.price}</strong>
+            <div className="dish-price d-flex align-self-center">
+              <strong className="text-center">${dish.price}</strong>
             </div>
-            <div className="d-flex ms-auto p-2 align-self-center">
+            <div className="d-flex flex-wrap ms-auto pe-2 align-self-center">
               <input
                 checked={dish.checked}
-                className="form-check-input flex-shrink-0"
+                className="checkbox form-check-input flex-shrink-0"
                 onChange={handleChecked(dish)}
                 type="checkbox"
                 value=""
@@ -53,7 +53,7 @@ export default function List(props) {
           </label>
         );
       })}
-    </div>
+    </main>
   );
 }
 
