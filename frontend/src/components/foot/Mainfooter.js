@@ -1,6 +1,7 @@
+//Akhila
 import React from "react";
 
-export default function mainfooter() {
+export default function Mainfooter() {
   return (
     <div style={{ backgroundColor: "#f5c65e", paddingtop: "20px" }}>
       <p className="text-center">
@@ -10,3 +11,5 @@ export default function mainfooter() {
     </div>
   );
 }
+
+Mainfooter.propTypes = {};
