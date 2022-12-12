@@ -51,7 +51,8 @@ export default function Footer(props) {
         type="button"
         data-bs-toggle="modal"
         onClick={onHandleOrder}
-        disabled={checkedDishes.length === 0 ? true : false}>
+        disabled={checkedDishes.length === 0 ? true : false}
+      >
         Order Now
       </button>
 
@@ -60,7 +61,8 @@ export default function Footer(props) {
         id="dialog"
         tabIndex="-1"
         aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
@@ -71,7 +73,8 @@ export default function Footer(props) {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                aria-label="Close"></button>
+                aria-label="Close"
+              ></button>
             </div>
             <div className="modal-body">
               <p className="fs-4">Do you decide to order these dishes?</p>
@@ -102,15 +105,17 @@ export default function Footer(props) {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal">
+                className="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
                 Cancel
               </button>
               <button
                 type="button"
                 className="btn btn-primary"
                 data-bs-dismiss="modal"
-                onClick={onOrderNowHandler}>
+                onClick={onOrderNowHandler}
+              >
                 Confirm
               </button>
             </div>

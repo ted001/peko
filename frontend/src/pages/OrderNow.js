@@ -99,15 +99,7 @@ export default function OrderNow() {
           <div className="fs-5">Phone: {phone}</div>
         </div>
       </div>
-      <img
-        // style={{
-        //   width: "100%",
-        // }}
-        width="1295px"
-        height="400px"
-        src={landbg}
-        alt="food delivery"
-      />
+      <img width="1295px" height="400px" src={landbg} alt="food delivery" />
       <Mainfooter />
     </div>
   );
