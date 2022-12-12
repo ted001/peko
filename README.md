@@ -5,6 +5,9 @@ This project was built for [CS 5610 Web Class](https://johnguerra.co/classes/web
 This is a reiteration over the original project focusing on the Usability and accessibilty of the website
 Each of the team members interviewed 3 people to understand user's persepective of the site(Recording link submitted on canvas)
 
+### Deployed site
+[Peko2.0](https://peko2.onrender.com/)
+
 Few of the points that was made sure during this phase:
 1. App can be accessed entirely through keyboard
 2. App follows a constant color scheme
