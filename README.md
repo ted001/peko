@@ -23,25 +23,25 @@ Note: Usability study document is input in the form as it contains recording det
 
 Website at a glimpse
 Login Page
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekologin.png)
+[Login Page]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekologin.png)
 
 Registration Page
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekoregister.png)
+[Registration page]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekoregister.png)
 
 Meals Page
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/pekomeals.png)
+[Meals page]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/pekomeals.png)
 
 Filters
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/filters.png)
+[Filters]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/filters.png)
 
 Error when address and phone number not present
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/adderror.png)
+[error message]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/adderror.png)
 
 Order confirmation popup
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/confirm.png)
+[Order confirmation]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/confirm.png)
 
 Order details page
-!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/orderdet.png)
+[Order details]!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/orderdet.png)
 
 ## Project Objective
 
