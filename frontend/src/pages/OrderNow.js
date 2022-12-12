@@ -50,18 +50,11 @@ export default function OrderNow() {
     <div>
       <Navbar />
       <div>
-        <img
-          style={{
-            width: "100%",
-          }}
-          src={landbg}
-          alt="food delivery"
-        />
         <h1 className="order-success">
           Order Success.Thank you for your trust.
         </h1>
         <h2 className="order-success-info">
-          Your oder will be delivered in 15 minutes. Please keep your phone
+          Your order will be delivered in 15 minutes. Please keep your phone
           connected.
         </h2>
         <h2 className="order-success-info">
@@ -106,6 +99,15 @@ export default function OrderNow() {
           <div className="fs-5">Phone: {phone}</div>
         </div>
       </div>
+      <img
+        // style={{
+        //   width: "100%",
+        // }}
+        width="1295px"
+        height="400px"
+        src={landbg}
+        alt="food delivery"
+      />
       <Mainfooter />
     </div>
   );
