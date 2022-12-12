@@ -120,7 +120,7 @@ export default function SignUp() {
           <label className="form-label" htmlFor="form3Example5">
             Confirm Password
             <br />
-            {password != confPassword ? (
+            {password !== confPassword ? (
               <div style={{ color: "red" }}>password not matched </div>
             ) : (
               ""

@@ -5,7 +5,6 @@ import { useNavigate, Link } from "react-router-dom";
 import url from "../../images/logincss-bg.png";
 import urlhome from "../../images/home.png";
 import urlrest from "../../images/rest.png";
-import footer from "../foot/Mainfooter.js";
 
 import "./Login.css";
 
