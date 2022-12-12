@@ -13,6 +13,8 @@ Few of the points that was made sure during this phase:
 
 ### color palette
 The primary color of the app is #F5C65D, the app follows the skip gradient palette generated from the [color palette](https://mycolor.space/?hex=%23F5C65D&sub=1)
+Color Palette
+![Colors](https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekocolor.png)
 The shade of yellow that is selected as a main color of the app is because of its significance in food delivery app. 
 
 ### Typography
