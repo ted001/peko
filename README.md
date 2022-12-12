@@ -1,5 +1,26 @@
 # Peko – Quick Food Ordering Platform
 
+## Project objective(Final project)
+This is a reiteration over the original project focusing on the Usability and accessibilty of the website
+Each of the team members interviewed 3 people to understand user's persepective of the site(Recording link submitted on canvas)
+
+Few of the points that was made sure during this phase:
+1. App can be accessed entirely through keyboard
+2. App follows a constant color scheme
+3. App follows a Typography
+4. App does not throw any error when checked with axe deque
+
+### color palette
+The primary color of the app is #F5C65D, the app follows the skip gradient palette generated from the [color palette](https://mycolor.space/?hex=%23F5C65D&sub=1)
+The shade of yellow that is selected as a main color of the app is because of its significance in food delivery app. 
+
+### Typography
+The information displayed on this app follows [Roboto font](https://fonts.google.com/specimen/Roboto), which is a top three fonts that is used in resturant delivery apps on the web
+
+Links to the presentation and [slides](https://docs.google.com/presentation/d/1EQG3yEnojexCCqRiFR5JFm1uInPq6lRt20rzdjf3O-8/edit?usp=sharing)
+Note: Usability study document is input in the form as it contains recording details
+
+
 ## Project Objective
 
 This project was built for [CS 5610 Web Class](https://johnguerra.co/classes/webDevelopment_fall_2022/)
