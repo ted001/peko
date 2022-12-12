@@ -1,4 +1,4 @@
-# Peko – Quick Food Ordering Platform
+# Peko – Quick Food Ordering Platform(Final phase)
 
 ## Project objective(Final project)
 This project was built for [CS 5610 Web Class](https://johnguerra.co/classes/webDevelopment_fall_2022/)
@@ -20,7 +20,7 @@ The shade of yellow that is selected as a main color of the app is because of it
 ### Typography
 The information displayed on this app follows [Roboto font](https://fonts.google.com/specimen/Roboto), which is a top three fonts that is used in resturant delivery apps on the web
 
-Links to the presentation and [slides](https://docs.google.com/presentation/d/1EQG3yEnojexCCqRiFR5JFm1uInPq6lRt20rzdjf3O-8/edit?usp=sharing)
+Links to the [presentation](https://www.youtube.com/watch?v=ZUdFgP3sc7g) and [slides](https://docs.google.com/presentation/d/1EQG3yEnojexCCqRiFR5JFm1uInPq6lRt20rzdjf3O-8/edit?usp=sharing)
 Note: Usability study document is input in the form as it contains recording details
 
 Website at a glimpse
@@ -44,6 +44,10 @@ Order confirmation popup
 
 Order details page
 ![Order details](https://github.com/Akhilasulgante/peko/blob/main/Screenshots/orderdet.png)
+
+
+
+#Project 3
 
 ## Project Objective
 
