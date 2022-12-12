@@ -152,9 +152,9 @@ export default function Meals() {
             />
           </div>
           <div className="col-lg-9 col-md-10">
-            <main className="text-center align-middle mt-5">
+            <div className="text-center align-middle mt-5">
               <Loading />
-            </main>
+            </div>
           </div>
         </div>
       </div>
@@ -175,12 +175,12 @@ export default function Meals() {
             />
           </div>
           <div className="col-lg-9 col-md-10">
-            <main className="text-center align-middle mt-5">
+            <div className="text-center align-middle mt-5">
               <h1>Sorry! No result found!</h1>
               <h2>
                 We're sorry what you were looking for. Please try another way.
               </h2>
-            </main>
+            </div>
           </div>
         </div>
       </div>

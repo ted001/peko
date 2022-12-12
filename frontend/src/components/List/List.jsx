@@ -16,7 +16,7 @@ export default function List(props) {
 
   console.log("list render", dishes.length);
   return (
-    <main className="list-group w-auto mt-5">
+    <div className="list-group w-auto mt-5">
       {dishes.map((dish) => {
         return (
           <label key={dish.key} className="list-group-item d-flex gap-3">
@@ -53,7 +53,7 @@ export default function List(props) {
           </label>
         );
       })}
-    </main>
+    </div>
   );
 }
 

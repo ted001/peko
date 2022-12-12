@@ -49,7 +49,7 @@ export default function OrderNow() {
   return (
     <div>
       <Navbar />
-      <main>
+      <div>
         <img
           style={{
             width: "100%",
@@ -105,7 +105,7 @@ export default function OrderNow() {
           <div className="fs-5">Address: {address}</div>
           <div className="fs-5">Phone: {phone}</div>
         </div>
-      </main>
+      </div>
       <Mainfooter />
     </div>
   );
