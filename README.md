@@ -1,6 +1,7 @@
 # Peko – Quick Food Ordering Platform
 
 ## Project objective(Final project)
+This project was built for [CS 5610 Web Class](https://johnguerra.co/classes/webDevelopment_fall_2022/)
 This is a reiteration over the original project focusing on the Usability and accessibilty of the website
 Each of the team members interviewed 3 people to understand user's persepective of the site(Recording link submitted on canvas)
 
@@ -20,10 +21,31 @@ The information displayed on this app follows [Roboto font](https://fonts.google
 Links to the presentation and [slides](https://docs.google.com/presentation/d/1EQG3yEnojexCCqRiFR5JFm1uInPq6lRt20rzdjf3O-8/edit?usp=sharing)
 Note: Usability study document is input in the form as it contains recording details
 
+Website at a glimpse
+Login Page
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekologin.png)
+
+Registration Page
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/Pekoregister.png)
+
+Meals Page
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/pekomeals.png)
+
+Filters
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/filters.png)
+
+Error when address and phone number not present
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/adderror.png)
+
+Order confirmation popup
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/confirm.png)
+
+Order details page
+!(https://github.com/Akhilasulgante/peko/blob/main/Screenshots/orderdet.png)
 
 ## Project Objective
 
-This project was built for [CS 5610 Web Class](https://johnguerra.co/classes/webDevelopment_fall_2022/)
+
 The objective was to build a Full-stack(MERN) food-delivery application that demonstartes Mongo CRUD operations and react functional component knowledge.
 Peko is a food delivery website that provides users with the options of filters on type, taste and budget of the dishes.
 
