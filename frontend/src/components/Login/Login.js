@@ -86,7 +86,10 @@ export default function Login() {
         </div>
 
         <p>
-          Don't have an account? <Link to="/register">Register here</Link>
+          Don't have an account?{" "}
+          <Link style={{ color: "black" }} to="/register">
+            Register here
+          </Link>
         </p>
       </form>
       <div className="imagesbh">
