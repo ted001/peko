@@ -21,6 +21,8 @@ export default function Pagination({
               Previous
             </button>
           </li>
+          // review 2 - here you are showing all 50 numbers, if this number increases, it would not look appeleaing,
+          // you can change that to show [prev,1,2,....50,next]
           {pageNumbers.map((number) => (
             <li
               key={number}
