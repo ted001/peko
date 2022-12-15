@@ -69,6 +69,9 @@ export default function Meals() {
     getAllMeals();
   }, []);
 
+  //review 1- changing arg names to something meaningful would help in understanding the code 
+  //even better
+  
   // Refined add algorithm for decimal
   // Ref to https://blog.csdn.net/WuLex/article/details/104628132
   function accAdd(arg1, arg2) {
